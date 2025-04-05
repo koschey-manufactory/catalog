@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koschey Manufactory</title>
+    <meta name="description" content="Мануфактура Кощей | Военное снаряжение Беларусь">
+     <!-- Styles -->
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- Web Fonts -->
+    
+     <!-- Icon -->
+    <link href="images/koschey-logo.ico" rel="icon">
+</head>
+<body>
+<header class="header">
+    <nav class="header__menu">
+        <div class="container">
+            <div class="logo">
+            </div>
+            <div class="menu__burger">
+                <!-- <input id="menu__toggle" type="checkbox" onclick="burgerMenu()"> -->
+                <div class="menu__btn" onclick="burgerMenu()" id="menuButton">
+                    <span id="burgerMenu1"></span>
+                    <span id="burgerMenu2"></span>
+                    <span id="burgerMenu3"></span>
+                </div>
+                <div class="menu__block">
+                    <div class="menu__box closed" id="menu" onclick="closeMenu()">
+                        <div>
+                            <ul class="header__list">
+                                <li><a href="#main" class="header__link">Главная</a></li>
+                                <li><a href="#catalog1" class="header__link">Каталог</a></li>
+                                <li><a href="#" class="header__link">Новости</a></li>
+                                <li><a href="#about" class="header__link">О нас</a></li>
+                                <li><a href="#contacts" class="header__link">Контакты</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="header__lang"><span>BYN &nbsp;</span>/&nbsp; RUB</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="header__info">
+        <div class="container">
+            <h1 id="main">Мануфактура Кощей | Военное снаряжение</h1>
+            <p class="header__text">Кощей - это независимый отечественный производитель снаряжения военного назначения.
+                Наша команда - это сообщество мастеров-ремесленников, знакомых с оружием и ратным делом, объединившихся с целью создания качественного и доступного армейского снаряжения.
+                Наши изделия - это накопленный опыт, надёжные решения и испытанные материалы.</p>
+            <button class="header__button">Заказать через Telegram</button>
+        </div>
+    </div>
+
+</header>
+<main>
+    <section id="catalog1" class="section-catalog">
+        <div class="container"> 
+            <div class="catalog-container">
+                <div class="catalog-switcher" id="catalogSwitcher"></div>
+                <div class="catalog-section-title">
+                    <div class="section-title-line"></div>
+                    <h2 class="section-title-text">Бронежилеты</h2>
+                    <div class="section-title-line"></div>
+                </div>
+            </div>
+            <div class="catalog_items" id="catalogItems1" style="background-image: url();">
+                <!-- <div id="catalog__item1" class="catalog__item">
+                    <div class="item-photo">
+                    </div> 
+                    <p class="item-heading">
+                    Чехол под бронежилет 6094 TV-103
+                    </p> 
+                    <p class="item-text">
+                    <span>Артикул</span>: TV-103-ATFGN-B
+                    </p> 
+                    <p class="item-color">
+                    <span>Цвет</span>: Олива
+                    </p>
+                    <div class="item-colors">
+                        <div class="item-color-block item-color-block1"></div>
+                        <div class="item-color-block item-color-block2"></div>
+                        <div class="item-color-block item-color-block3"></div>
+                    </div>
+                    <p class="item-price">
+                    200 BYN / 15 804 RUB     
+                    </p>
+                </div>
+                <div id="catalog__item2" class="catalog__item">
+                    <div class="item-photo">
+                    </div> 
+                    <p class="item-heading">
+                    Чехол под бронежилет 6094 TV-103
+                    </p> 
+                    <p class="item-text">
+                    <span>Артикул</span>: TV-103-ATFGN-B
+                    </p> 
+                    <p class="item-price">
+                    200 BYN / 15 804 RUB     
+                    </p>
+                </div>
+                <div id="catalog__item3" class="catalog__item">
+                    <div class="item-photo">
+                    </div> 
+                    <p class="item-heading">
+                    Чехол под бронежилет 6094 TV-103
+                    </p> 
+                    <p class="item-text">
+                    <span>Артикул</span>: TV-103-ATFGN-B
+                    </p> 
+                    <p class="item-price">
+                    200 BYN / 15 804 RUB     
+                    </p>
+                </div>
+                <div id="catalog__item4" class="catalog__item">
+                    <div class="item-photo">
+                    </div> 
+                    <p class="item-heading">
+                    Чехол под бронежилет 6094 TV-103
+                    </p> 
+                    <p class="item-text">
+                    <span>Артикул</span>: TV-103-ATFGN-B
+                    </p> 
+                    <p class="item-price">
+                    200 BYN / 15 804 RUB     
+                    </p>
+                </div>
+            </div> -->
+            </div>
+        </div> 
+   </section>
+   <section id="catalog2" class="section-catalog">
+        <div class="container">
+            <div class="catalog-container">
+                <div class="catalog-switcher"></div>
+                <div class="catalog-section-title">
+                    <div class="section-title-line"></div>
+                    <h2 class="section-title-text">Модули / Аксессуары для БЖ</h2>
+                    <div class="section-title-line"></div>
+                </div>
+            </div>
+            <div class="catalog_items" id="catalogItems2">
+                <div id="catalog__item5" class="catalog__item">
+                    <div class="item-photo">
+                    </div> 
+                    <p class="item-heading">
+                    Чехол под бронежилет 6094 TV-103
+                    </p> 
+                    <p class="item-text">
+                    <span>Артикул</span>: TV-103-ATFGN-B
+                    </p> 
+                    <p class="item-price">
+                    200 BYN / 15 804 RUB     
+                    </p>
+                </div>
+                <div id="catalog__item6" class="catalog__item">
+                    <div class="item-photo">
+                    </div> 
+                    <p class="item-heading">
+                    Чехол под бронежилет 6094 TV-103
+                    </p> 
+                    <p class="item-text">
+                    <span>Артикул</span>: TV-103-ATFGN-B
+                    </p> 
+                    <p class="item-price">
+                    200 BYN / 15 804 RUB     
+                    </p>
+                </div>
+                <div id="catalog__item7" class="catalog__item">
+                    <div class="item-photo">
+                    </div> 
+                    <p class="item-heading">
+                    Чехол под бронежилет 6094 TV-103
+                    </p> 
+                    <p class="item-text">
+                    <span>Артикул</span>: TV-103-ATFGN-B
+                    </p> 
+                    <p class="item-price">
+                    200 BYN / 15 804 RUB     
+                    </p>
+                </div>
+                <div id="catalog__item8" class="catalog__item">
+                    <div class="item-photo">
+                    </div> 
+                    <p class="item-heading">
+                    Чехол под бронежилет 6094 TV-103
+                    </p> 
+                    <p class="item-text">
+                    <span>Артикул</span>: TV-103-ATFGN-B
+                    </p> 
+                    <p class="item-price">
+                    200 BYN / 15 804 RUB     
+                    </p>
+                </div>
+            </div>
+        </div> 
+</section>
+<section id="catalog3" class="section-catalog">
+    <div class="container"> 
+        <div class="catalog-container">
+            <div class="catalog-switcher"></div>
+            <div class="catalog-section-title">
+                <div class="section-title-line"></div>
+                <h2 class="section-title-text">Пояса / Ремни</h2>
+                <div class="section-title-line"></div>
+            </div>
+        </div>
+        <div class="catalog_items" id="catalogItems3">
+            <div id="catalog__item9" class="catalog__item">
+                <div class="item-photo">
+                </div> 
+                <p class="item-heading">
+                Чехол под бронежилет 6094 TV-103
+                </p> 
+                <p class="item-text">
+                <span>Артикул</span>: TV-103-ATFGN-B
+                </p> 
+                <p class="item-price">
+                200 BYN / 15 804 RUB     
+                </p>
+            </div>
+            <div id="catalog__item10" class="catalog__item">
+                <div class="item-photo">
+                </div> 
+                <p class="item-heading">
+                Чехол под бронежилет 6094 TV-103
+                </p> 
+                <p class="item-text">
+                <span>Артикул</span>: TV-103-ATFGN-B
+                </p> 
+                <p class="item-price">
+                200 BYN / 15 804 RUB     
+                </p>
+            </div>
+            <div id="catalog__item11" class="catalog__item">
+                <div class="item-photo">
+                </div> 
+                <p class="item-heading">
+                Чехол под бронежилет 6094 TV-103
+                </p> 
+                <p class="item-text">
+                <span>Артикул</span>: TV-103-ATFGN-B
+                </p> 
+                <p class="item-price">
+                200 BYN / 15 804 RUB     
+                </p>
+            </div>
+        </div>
+    </div> 
+</section>
+<section id="catalog4" class="section-catalog">
+    <div class="container">
+        <div class="catalog-container">
+            <div class="catalog-switcher"></div>
+            <div class="catalog-section-title">
+                <div class="section-title-line"></div>
+                <h2 class="section-title-text">Разгрузочные системы</h2>
+                <div class="section-title-line"></div>
+            </div>
+        </div>
+        <div class="catalog_items" id="catalogItems4">
+            <div id="catalog__item12" class="catalog__item">
+                <div class="item-photo">
+                </div> 
+                <p class="item-heading">
+                Чехол под бронежилет 6094 TV-103
+                </p> 
+                <p class="item-text">
+                <span>Артикул</span>: TV-103-ATFGN-B
+                </p> 
+                <p class="item-price">
+                200 BYN / 15 804 RUB     
+                </p>
+            </div>
+            <div id="catalog__item13" class="catalog__item">
+                <div class="item-photo">
+                </div> 
+                <p class="item-heading">
+                Чехол под бронежилет 6094 TV-103
+                </p> 
+                <p class="item-text">
+                <span>Артикул</span>: TV-103-ATFGN-B
+                </p> 
+                <p class="item-price">
+                200 BYN / 15 804 RUB     
+                </p>
+            </div>
+            <div id="catalog__item14" class="catalog__item">
+                <div class="item-photo">
+                </div> 
+                <p class="item-heading">
+                Чехол под бронежилет 6094 TV-103
+                </p> 
+                <p class="item-text">
+                <span>Артикул</span>: TV-103-ATFGN-B
+                </p> 
+                <p class="item-price">
+                200 BYN / 15 804 RUB     
+                </p>
+            </div>
+        </div>
+    </div> 
+</section>
+<section id="catalog5" class="section-catalog">
+    <div class="container"> 
+        <div class="catalog-container">
+            <div class="catalog-switcher"></div>
+            <div class="catalog-section-title">
+                <div class="section-title-line"></div>
+                <h2 class="section-title-text">Подсумки для боекомплекта</h2>
+                <div class="section-title-line"></div>
+            </div>
+        </div>
+        <div class="catalog_items" id="catalogItems5">
+            <div id="catalog__item15" class="catalog__item">
+                <div class="item-photo">
+                </div> 
+                <p class="item-heading">
+                Чехол под бронежилет 6094 TV-103
+                </p> 
+                <p class="item-text">
+                <span>Артикул</span>: TV-103-ATFGN-B
+                </p> 
+                <p class="item-price">
+                200 BYN / 15 804 RUB     
+                </p>
+            </div>
+            <div id="catalog__item16" class="catalog__item">
+                <div class="item-photo">
+                </div> 
+                <p class="item-heading">
+                Чехол под бронежилет 6094 TV-103
+                </p> 
+                <p class="item-text">
+                <span>Артикул</span>: TV-103-ATFGN-B
+                </p> 
+                <p class="item-price">
+                200 BYN / 15 804 RUB     
+                </p>
+            </div>
+            <div id="catalog__item17" class="catalog__item">
+                <div class="item-photo">
+                </div> 
+                <p class="item-heading">
+                Чехол под бронежилет 6094 TV-103
+                </p> 
+                <p class="item-text">
+                <span>Артикул</span>: TV-103-ATFGN-B
+                </p> 
+                <p class="item-price">
+                200 BYN / 15 804 RUB     
+                </p>
+            </div>
+        </div>
+    </div> 
+</section>
+<section id="catalog6" class="section-catalog">
+    <div class="container"> 
+        <div class="catalog-container">
+            <div class="catalog-switcher"></div>
+            <div class="catalog-section-title">
+                <div class="section-title-line"></div>
+                <h2 class="section-title-text">Медицинские подсумки</h2>
+                <div class="section-title-line"></div>
+            </div>
+        </div>
+        <div class="catalog_items">
+            <div id="catalog__item18" class="catalog__item">
+                <div class="item-photo">
+                </div> 
+                <p class="item-heading">
+                Чехол под бронежилет 6094 TV-103
+                </p> 
+                <p class="item-text">
+                <span>Артикул</span>: TV-103-ATFGN-B
+                </p> 
+                <p class="item-price">
+                200 BYN / 15 804 RUB     
+                </p>
+            </div>
+            <div id="catalog__item19" class="catalog__item">
+                <div class="item-photo">
+                </div> 
+                <p class="item-heading">
+                Чехол под бронежилет 6094 TV-103
+                </p> 
+                <p class="item-text">
+                <span>Артикул</span>: TV-103-ATFGN-B
+                </p> 
+                <p class="item-price">
+                200 BYN / 15 804 RUB     
+                </p>
+            </div>
+            <div id="catalog__item20" class="catalog__item">
+                <div class="item-photo">
+                </div> 
+                <p class="item-heading">
+                Чехол под бронежилет 6094 TV-103
+                </p> 
+                <p class="item-text">
+                <span>Артикул</span>: TV-103-ATFGN-B
+                </p> 
+                <p class="item-price">
+                200 BYN / 15 804 RUB     
+                </p>
+            </div>
+        </div>
+    </div> 
+</section>
+<section id="catalog7" class="section-catalog">
+    <div class="container"> 
+        <div class="catalog-container">
+            <div class="catalog-switcher"></div>
+            <div class="catalog-section-title">
+                <div class="section-title-line"></div>
+                <h2 class="section-title-text">Утилитарные подсумки</h2>
+                <div class="section-title-line"></div>
+            </div>
+        </div>
+        <div class="catalog_items">
+            <div id="catalog__item21" class="catalog__item">
+                <div class="item-photo">
+                </div> 
+                <p class="item-heading">
+                Чехол под бронежилет 6094 TV-103
+                </p> 
+                <p class="item-text">
+                <span>Артикул</span>: TV-103-ATFGN-B
+                </p> 
+                <p class="item-price">
+                200 BYN / 15 804 RUB     
+                </p>
+            </div>
+            <div id="catalog__item22" class="catalog__item">
+                <div class="item-photo">
+                </div> 
+                <p class="item-heading">
+                Чехол под бронежилет 6094 TV-103
+                </p> 
+                <p class="item-text">
+                <span>Артикул</span>: TV-103-ATFGN-B
+                </p> 
+                <p class="item-price">
+                200 BYN / 15 804 RUB     
+                </p>
+            </div>
+            <div id="catalog__item23" class="catalog__item">
+                <div class="item-photo">
+                </div> 
+                <p class="item-heading">
+                Чехол под бронежилет 6094 TV-103
+                </p> 
+                <p class="item-text">
+                <span>Артикул</span>: TV-103-ATFGN-B
+                </p> 
+                <p class="item-price">
+                200 BYN / 15 804 RUB     
+                </p>
+            </div>
+        </div>
+    </div> 
+</section>
+<section id="catalog8" class="section-catalog">
+    <div class="container"> 
+        <div class="catalog-container">
+            <div class="catalog-switcher"></div>
+            <div class="catalog-section-title">
+                <div class="section-title-line"></div>
+                <h2 class="section-title-text">Подсумки для радиостанций</h2>
+                <div class="section-title-line"></div>
+            </div>
+        </div>
+        <div class="catalog_items">
+            <div id="catalog__item24" class="catalog__item">
+                <div class="item-photo">
+                </div> 
+                <p class="item-heading">
+                Чехол под бронежилет 6094 TV-103
+                </p> 
+                <p class="item-text">
+                <span>Артикул</span>: TV-103-ATFGN-B
+                </p> 
+                <p class="item-price">
+                200 BYN / 15 804 RUB     
+                </p>
+            </div>
+            <div id="catalog__item25" class="catalog__item">
+                <div class="item-photo">
+                </div> 
+                <p class="item-heading">
+                Чехол под бронежилет 6094 TV-103
+                </p> 
+                <p class="item-text">
+                <span>Артикул</span>: TV-103-ATFGN-B
+                </p> 
+                <p class="item-price">
+                200 BYN / 15 804 RUB     
+                </p>
+            </div>
+            <div id="catalog__item26" class="catalog__item">
+                <div class="item-photo">
+                </div> 
+                <p class="item-heading">
+                Чехол под бронежилет 6094 TV-103
+                </p> 
+                <p class="item-text">
+                <span>Артикул</span>: TV-103-ATFGN-B
+                </p> 
+                <p class="item-price">
+                200 BYN / 15 804 RUB     
+                </p>
+            </div>
+        </div>
+    </div> 
+</section>
+<section id="catalog9" class="section-catalog">
+    <div class="container"> 
+        <div class="catalog-container">
+            <div class="catalog-switcher"></div>
+            <div class="catalog-section-title">
+                <div class="section-title-line"></div>
+                <h2 class="section-title-text">Прочие подсумки</h2>
+                <div class="section-title-line"></div>
+            </div>
+        </div>
+        <div class="catalog_items">
+            <div id="catalog__item27" class="catalog__item">
+                <div class="item-photo">
+                </div> 
+                <p class="item-heading">
+                Чехол под бронежилет 6094 TV-103
+                </p> 
+                <p class="item-text">
+                <span>Артикул</span>: TV-103-ATFGN-B
+                </p> 
+                <p class="item-price">
+                200 BYN / 15 804 RUB     
+                </p>
+            </div>
+            <div id="catalog__item28" class="catalog__item">
+                <div class="item-photo">
+                </div> 
+                <p class="item-heading">
+                Чехол под бронежилет 6094 TV-103
+                </p> 
+                <p class="item-text">
+                <span>Артикул</span>: TV-103-ATFGN-B
+                </p> 
+                <p class="item-price">
+                200 BYN / 15 804 RUB     
+                </p>
+            </div>
+            <div id="catalog__item29" class="catalog__item">
+                <div class="item-photo">
+                </div> 
+                <p class="item-heading">
+                Чехол под бронежилет 6094 TV-103
+                </p> 
+                <p class="item-text">
+                <span>Артикул</span>: TV-103-ATFGN-B
+                </p> 
+                <p class="item-price">
+                200 BYN / 15 804 RUB     
+                </p>
+            </div>
+        </div>
+    </div> 
+</section>
+<section id="catalog10" class="section-catalog">
+    <div class="container"> 
+        <div class="catalog-container">
+            <div class="catalog-switcher"></div>
+            <div class="catalog-section-title">
+                <div class="section-title-line"></div>
+                <h2 class="section-title-text">Рюкзаки</h2>
+                <div class="section-title-line"></div>
+            </div>
+        </div>
+        <div class="catalog_items">
+            <div id="catalog__item30" class="catalog__item">
+                <div class="item-photo">
+                </div> 
+                <p class="item-heading">
+                Чехол под бронежилет 6094 TV-103
+                </p> 
+                <p class="item-text">
+                <span>Артикул</span>: TV-103-ATFGN-B
+                </p> 
+                <p class="item-price">
+                200 BYN / 15 804 RUB     
+                </p>
+            </div>
+            <div id="catalog__item31" class="catalog__item">
+                <div class="item-photo">
+                </div> 
+                <p class="item-heading">
+                Чехол под бронежилет 6094 TV-103
+                </p> 
+                <p class="item-text">
+                <span>Артикул</span>: TV-103-ATFGN-B
+                </p> 
+                <p class="item-price">
+                200 BYN / 15 804 RUB     
+                </p>
+            </div>
+            <div id="catalog__item32" class="catalog__item">
+                <div class="item-photo">
+                </div> 
+                <p class="item-heading">
+                Чехол под бронежилет 6094 TV-103
+                </p> 
+                <p class="item-text">
+                <span>Артикул</span>: TV-103-ATFGN-B
+                </p> 
+                <p class="item-price">
+                200 BYN / 15 804 RUB     
+                </p>
+            </div>
+        </div>
+    </div> 
+</section>
+<section id="price">
+    <div class="container">
+        <div class="section-title">
+            <div class="section-title-line"></div>
+            <h2 class="section-title-text">Услуги</h2>
+            <div class="section-title-line"></div>
+        </div>
+        <div class="price__blocks">
+            <div class="price__block">
+                <div class="price__headline">Индивидуальный пошив</div>
+                <div class="price__cost">Под заказ</div>
+                <div class="price__list">
+                <p>Описание описание</p>
+                <p>Описание описание</p>
+                <p>Описание описание</p>
+                <p>Описание описание</p>
+                <p>Описание описание</p>
+                </div>
+                <button class="price__button">Заказать</button>
+            </div>
+            <div class="price__block">
+                <div class="price__headline">Раскройка баллистических пакетов</div>
+                <div class="price__cost">Под заказ</div>
+                <div class="price__list">
+                <p>Из бронежилетов</p>
+                <p>Под ваши размеры</p>
+                <p>Описание описание</p>
+                <p>Описание описание</p>
+                <p>Описание описание</p>
+                </div>
+                <button class="price__button">Заказать</button>
+            </div>
+            <div class="price__block">
+                <div class="price__headline">Ремонт снаряжения</div>
+                <div class="price__cost">Под заказ</div>
+                <div class="price__list">
+                <p>Описание описание</p>
+                <p>Описание описание</p>
+                <p>Описание описание</p>
+                <p>Описание описание</p>
+                <p>Описание описание</p>
+                </div>
+                <button class="price__button">Заказать</button>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="skills">
+    <div class="container">
+        <div class="section-title">
+            <div class="section-title-line"></div>
+            <h2 class="section-title-text">Наши принципы</h2>
+            <div class="section-title-line"></div>
+        </div>
+        <div class="skills__items">
+            <div class="skills__item">
+                <img src="images/skill-icon1.svg" alt="">
+                <h3>Cобственное производство</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="skills__item">
+                <img src="images/skill-icon2.svg" alt="">
+                <h3>Новейшие технологии</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="skills__item">
+                <img src="images/skill-icon3.svg" alt="">
+                <h3>Уникальность материалов</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="skills__item">
+                <img src="images/skill-icon4.svg" alt="">
+                <h3>Система скидок</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="about">
+    <div class="container">
+        <div class="section-title">
+            <div class="section-title-line"></div>
+            <h2 class="section-title-text">О нас</h2>
+            <div class="section-title-line"></div>
+        </div>
+        <div class="about__content">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, odio? Provident omnis iste tempore exercitationem atque optio amet explicabo. Quod aliquid voluptates a pariatur dicta, aspernatur aliquam exercitationem eos itaque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, odio? Provident omnis iste tempore exercitationem atque optio amet explicabo. Quod aliquid voluptates a pariatur dicta, aspernatur aliquam exercitationem eos itaque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, odio? Provident omnis iste tempore exercitationem atque optio amet explicabo. Quod aliquid voluptates a pariatur dicta, aspernatur aliquam exercitationem eos itaque.</p>
+        </div>
+    </div>
+</section>
+</main>
+<footer>
+    <div class="container">
+        <div class="footer__info">
+            <p>© 2024</p>
+            <p>Кощей Мануфактура</p>
+        </div>
+        <div class="footer__text">
+            <p>Информация</p>
+            <p><a href="#" target="_blank">О компании</a></p>
+            <p><a href="#" target="_blank">Как сделать заказ</a></p>
+            <p><a href="#" target="_blank">Оплата и доставка</a></p>
+        </div>
+        <div id="contacts" class="footer__contacts">
+            <p>Контакты</p>
+            <p><a href="tel:+74951234567">8 (800) 250-87-23</a></p>
+            <p><a href="mailto:koschey.manufactory@gmail.com">koschey.manufactory@gmail.com</a></p>
+        </div>
+        <div class="footer__logo">
+            <a href="https://www.instagram.com/koschey_manufactory?igsh=MXI5YmRnMGRoeXZ0bw==" target="_blank"><div></div></a>
+            <a href="https://vk.com/koshey_manufactory" target="_blank"><div></div></a>
+            <a href="#" target="_blank"><div></div></a>
+        </div>
+    </div>  
+</footer>
+<script src="js/script.js"></script>
+</body>
+</html>
