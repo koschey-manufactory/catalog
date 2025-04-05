@@ -44,7 +44,6 @@ section {
     justify-content: center;
     align-items: center;
     margin: 0 auto 0; 
-    cursor: pointer;
 
 }
 
@@ -246,7 +245,7 @@ section {
 
  .catalog-container {
     cursor: pointer;
-     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
  }
 
 
@@ -298,6 +297,7 @@ display: grid;
     line-height: 36px;
     border: 1px solid rgb(120, 134, 107, 0.3);
     cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
    
   }
 
