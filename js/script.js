@@ -1,5 +1,3 @@
-
-
 // menu
 
 let menu = document.getElementById("menu");
@@ -27,104 +25,38 @@ function closeMenu() {
     menuButton.classList.toggle("opened-menu");
 }
 
+//effects
+
+const sections = document.querySelectorAll('section.section'); // только <section class="section">
+
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+      observer.unobserve(entry.target); // отключить, если не нужно повторное появление
+    }
+  });
+}, {
+  threshold: 0.1, // можно увеличить до 0.3–0.5 для плавности
+});
+
+sections.forEach(section => {
+  observer.observe(section);
+});
 
 
 // switcher
 
-// let catalogSwitcher = document.getElementById("catalogSwitcher");
-// let catalogItems1 = document.getElementById("catalogItems1");
+const catalogContainers = document.querySelectorAll(".catalog-container");
+const catalogSwitchers = document.querySelectorAll(".catalog-switcher");
+const catalogItems = document.querySelectorAll(".catalog_items");
 
-// function switchCatalog() {
-//     catalogItems1.classList.toggle("catalog-opened");
-//     catalogSwitcher.classList.toggle("switcher-opened");
-// }
-
-let catalogContainer = document.getElementsByClassName("catalog-container"); 
-let catalogSwitcher = document.getElementsByClassName("catalog-switcher"); 
-let catalogItems = document.getElementsByClassName("catalog_items"); 
-
-
-
-
-catalogContainer[0].addEventListener('click', switchCatalog0);
-
-function switchCatalog0() {
-    catalogSwitcher[0].classList.toggle("switcher-opened");
-    catalogItems[0].classList.toggle("catalog-opened");
-  }
-
-
-  
-catalogContainer[1].addEventListener('click', switchCatalog1);
-
-function switchCatalog1() {
-    catalogSwitcher[1].classList.toggle("switcher-opened");
-    catalogItems[1].classList.toggle("catalog-opened");
-  }
-
-
-    
-catalogContainer[2].addEventListener('click', switchCatalog2);
-
-function switchCatalog2() {
-    catalogSwitcher[2].classList.toggle("switcher-opened");
-    catalogItems[2].classList.toggle("catalog-opened");
-  }
-
-
-catalogContainer[3].addEventListener('click', switchCatalog3);
-
-function switchCatalog3() {
-    catalogSwitcher[3].classList.toggle("switcher-opened");
-    catalogItems[3].classList.toggle("catalog-opened");
-  }
-
-  
-catalogContainer[4].addEventListener('click', switchCatalog4);
-
-function switchCatalog4() {
-    catalogSwitcher[4].classList.toggle("switcher-opened");
-    catalogItems[4].classList.toggle("catalog-opened");
-  }
-
-
-  catalogContainer[5].addEventListener('click', switchCatalog5);
-
-function switchCatalog5() {
-    catalogSwitcher[5].classList.toggle("switcher-opened");
-    catalogItems[5].classList.toggle("catalog-opened");
-  }
-
-
-  catalogContainer[6].addEventListener('click', switchCatalog6);
-
-  function switchCatalog6() {
-      catalogSwitcher[6].classList.toggle("switcher-opened");
-      catalogItems[6].classList.toggle("catalog-opened");
-    }
-  
-    catalogContainer[7].addEventListener('click', switchCatalog7);
-
-    function switchCatalog7() {
-        catalogSwitcher[7].classList.toggle("switcher-opened");
-        catalogItems[7].classList.toggle("catalog-opened");
-      }
-      
-
-        
-    catalogContainer[8].addEventListener('click', switchCatalog8);
-
-    function switchCatalog8() {
-        catalogSwitcher[8].classList.toggle("switcher-opened");
-        catalogItems[8].classList.toggle("catalog-opened");
-      }
-    
-      catalogContainer[9].addEventListener('click', switchCatalog9);
-
-      function switchCatalog9() {
-          catalogSwitcher[9].classList.toggle("switcher-opened");
-          catalogItems[9].classList.toggle("catalog-opened");
-        }
+catalogContainers.forEach((container, i) => {
+  container.addEventListener("click", () => {
+    catalogSwitchers[i].classList.toggle("switcher-opened");
+    catalogItems[i].classList.toggle("catalog-opened");
+  });
+});
 
 
 //catalog 1
@@ -140,6 +72,7 @@ heading: "Чехол1 под бронежилет 6094 TV-103",
 text: "<span>Артикул</span>: TV-103-ATFGN-B1",
 price: "200 BYN / 15 804 RUB",
 color: "Олива",
+description: "Многофункциональный чехол под бронежилет с системой быстрого сброса, регулировкой размера и отделениями для размещения бронеэлементов. Выпускается в двух размерах и имеет дополнительную настройку размеров. Компактный медицинский EDC подсумок Шанс UP-129 рассчитан для ношения на поясном ремне, либо в качестве карманной аптечки. Производитель оставляет за собой право вносить изменения в технические характеристики, комплектацию и конструкцию, не ухудшающие эксплуатационные характеристики изделий, без предварительного уведомления.",
 },
 {
   id: "catalog__item2",
@@ -177,46 +110,7 @@ color: "Олива",
 ]
 
 
-let itemCards1 = "";
 
-
-for (i=0; i<items1.length; i++) {
-  itemCards1 += `
-<div id="${items1[i].id}" class="catalog__item">
-                    <div class="slider" data-slider-id=${items1[i].number}>
-                      <div class="slider-controls">
-                          <button class="slider-button prev">
-                              <img src="images/icons/prev-arrow-active.svg" alt="Previous" class="slider-arrow">
-                          </button>
-                          <div class="images">
-                              <img src="${items1[i].photo1}" class="item-photo">
-                              <img src="${items1[i].photo2}" class="item-photo">
-                              <img src="${items1[i].photo3}" class="item-photo">
-                          </div>
-                          <button class="slider-button next">
-                              <img src="images/icons/next-arrow-active.svg" alt="Next" class="slider-arrow">
-                          </button>
-                      </div>
-                      <div class="indicators"></div>
-                    </div>
-                    <p class="item-heading">
-                    ${items1[i].heading}
-                    </p> 
-                    <p class="item-text">
-                    ${items1[i].text}
-                    </p> 
-                    <p class="item-color">
-                    <span>Цвет</span>: ${items1[i].color}
-                    </p>
-                    <p class="item-price">
-                    ${items1[i].price}
-                    </p>
-                </div>
-`;
-}
-
-
-catalogItems1.innerHTML = itemCards1;
 
 
 // catalog 2
@@ -258,46 +152,45 @@ color: "Олива",
 ]
 
 
-let itemCards2 = "";
 
+// function to render items
+function renderCatalog(items, containerId) {
+  const container = document.getElementById(containerId);
+  let cards = "";
 
-for (i=0; i<items2.length; i++) {
-itemCards2 += `
-<div id="${items2[i].id}" class="catalog__item">
-                  <div class="slider" data-slider-id=${items2[i].number}>
-                    <div class="slider-controls">
-                        <button class="slider-button prev">
-                            <img src="images/icons/prev-arrow-active.svg" alt="Previous" class="slider-arrow">
-                        </button>
-                        <div class="images">
-                            <img src="${items2[i].photo1}" class="item-photo">
-                            <img src="${items2[i].photo2}" class="item-photo">
-                            <img src="${items2[i].photo3}" class="item-photo">
-                        </div>
-                        <button class="slider-button next">
-                            <img src="images/icons/next-arrow-active.svg" alt="Next" class="slider-arrow">
-                        </button>
-                    </div>
-                    <div class="indicators"></div>
-                  </div>
-                  <p class="item-heading">
-                  ${items2[i].heading}
-                  </p> 
-                  <p class="item-text">
-                  ${items2[i].text}
-                  </p> 
-                  <p class="item-color">
-                  <span>Цвет</span>: ${items2[i].color}
-                  </p>
-                  <p class="item-price">
-                  ${items2[i].price}
-                  </p>
-              </div>
-`;
+  items.forEach((item) => {
+    cards += `
+    <div id="${item.id}" class="catalog__item">
+      <div class="slider" data-slider-id="${item.number}">
+        <div class="slider-controls">
+          <button class="slider-button prev">
+            <img src="images/icons/prev-arrow-active.svg" alt="Previous" class="slider-arrow">
+          </button>
+          <div class="images">
+            <img src="${item.photo1}" class="item-photo">
+            <img src="${item.photo2}" class="item-photo">
+            <img src="${item.photo3}" class="item-photo">
+          </div>
+          <button class="slider-button next">
+            <img src="images/icons/next-arrow-active.svg" alt="Next" class="slider-arrow">
+          </button>
+        </div>
+        <div class="indicators"></div>
+      </div>
+      <p class="item-heading">${item.heading}</p>
+      <p class="item-text">${item.text}</p>
+      <p class="item-color"><span>Цвет</span>: ${item.color}</p>
+      <p class="item-price">${item.price}</p>
+      <button class="product-button" data-id="${item.id}">Подробнее</button>
+    </div>
+    `;
+  });
+
+  container.innerHTML = cards;
 }
 
-
-catalogItems2.innerHTML = itemCards2;
+renderCatalog(items1, "catalogItems1");
+renderCatalog(items2, "catalogItems2");
 
 
 
@@ -377,68 +270,39 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+// modal
 
-// class HvrSlider {
-//   constructor(selector) {
-//     const elements = document.querySelectorAll(selector);
-//     elements.forEach((el) => {
-//       if (el.querySelectorAll('img').length > 1) {
-//         const hvr = document.createElement('div');
-//         hvr.classList.add('hvr');
+const modal = document.getElementById("modal");
+const closeBtn = document.querySelector(".close");
+const modalHeading = document.getElementById("modal-heading");
+const modalText = document.getElementById("modal-text");
+const modalPrice = document.getElementById("modal-price");
+const modalColor = document.getElementById("modal-color");
+const modalPhoto1 = document.getElementById("modal-photo1");
+const modalPhoto2 = document.getElementById("modal-photo2");
+const modalPhoto3 = document.getElementById("modal-photo3");
+const modalDescription = document.getElementById("modal-description");
 
-//         const hvrImages = document.createElement('div');
-//         hvrImages.classList.add('hvr__images');
-//         hvr.appendChild(hvrImages);
+function openModal(itemId) {
+  const product = [...items1, ...items2].find(item => item.id === itemId);
+  if (product) {
+    modalHeading.textContent = product.heading;
+    modalText.innerHTML = product.text;
+    modalColor.textContent = `Цвет: ${product.color}`;
+    modalPrice.textContent = `Стоимость: ${product.price}`;
+    modalPhoto1.src = product.photo1;
+    modalPhoto2.src = product.photo2;
+    modalPhoto3.src = product.photo3;
+    modalDescription.textContent = `Описание: ${product.description || ''}`;
+    modal.style.display = "block";
+  }
+}
 
-//         const hvrSectors = document.createElement('div');
-//         hvrSectors.classList.add('hvr__sectors');
-//         hvrImages.appendChild(hvrSectors);
+closeBtn.onclick = () => modal.style.display = "none";
+window.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; };
 
-//         const hvrDots = document.createElement('div');
-//         hvrDots.classList.add('hvr__dots');
-//         hvr.appendChild(hvrDots);
-
-//         el.parentNode.insertBefore(hvr, el);
-//         hvrImages.prepend(el);
-
-//         const hvrImagesArray = hvr.querySelectorAll('img');
-//         hvrImagesArray.forEach(() => {
-//           hvrSectors.insertAdjacentHTML('afterbegin', '<div class="hvr__sector"></div>');
-//           hvrDots.insertAdjacentHTML('afterbegin', '<div class="hvr__dot"></div>');
-//         });
-//         hvrDots.firstChild.classList.add('hvr__dot--active');
-//         const setActiveEl = function (targetEl) {
-//           const index = [...hvrSectors.children].indexOf(targetEl);
-//           hvrImagesArray.forEach((img, idx) => {
-//             if (index == idx) {
-//               img.style.display = 'block';
-//             } else {
-//               img.style.display = 'none';
-//             }
-//           });
-//           hvr.querySelectorAll('.hvr__dot').forEach((dot, idx) => {
-//             if (index == idx) {
-//               dot.classList.add('hvr__dot--active');
-//             } else {
-//               dot.classList.remove('hvr__dot--active');
-//             }
-//           });
-//         };
-//         hvrSectors.addEventListener('mouseover', function (e) {
-//           if (e.target.matches('.hvr__sector')) {
-//             setActiveEl(e.target);
-//           }
-//         });
-//         hvrSectors.addEventListener('touchmove', function (e) {
-//           const position = e.changedTouches[0];
-//           const target = document.elementFromPoint(position.clientX, position.clientY);
-//           if (target.matches('.hvr__sector')) {
-//             setActiveEl(target);
-//           }
-//         });
-//       }
-//     });
-//   }
-// }
-
-// new HvrSlider('.images');
+document.addEventListener("click", (e) => {
+  if (e.target.matches(".product-button")) {
+    openModal(e.target.dataset.id);
+  }
+});
