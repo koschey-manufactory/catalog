@@ -69,7 +69,7 @@ photo1: "images/item1.png",
 photo2: "images/items/item1-1.jpg",
 photo3: "images/items/item1-3.jpg",
 heading: "Чехол1 под бронежилет 6094 TV-103",
-text: "<span>Артикул</span>: TV-103-ATFGN-B1",
+text: "TV-103-ATFGN-B1",
 price: "200 BYN / 15 804 RUB",
 color: "Олива",
 description: "Многофункциональный чехол под бронежилет с системой быстрого сброса, регулировкой размера и отделениями для размещения бронеэлементов. Выпускается в двух размерах и имеет дополнительную настройку размеров. Компактный медицинский EDC подсумок Шанс UP-129 рассчитан для ношения на поясном ремне, либо в качестве карманной аптечки. Производитель оставляет за собой право вносить изменения в технические характеристики, комплектацию и конструкцию, не ухудшающие эксплуатационные характеристики изделий, без предварительного уведомления.",
@@ -81,7 +81,7 @@ description: "Многофункциональный чехол под брон�
   photo2: "images/item1.png",
   photo3: "images/items/item1-3.jpg",
   heading: "Чехол2 под бронежилет 6094 TV-103",
-  text: "<span>Артикул</span>: TV-103-ATFGN-B2",
+  text: "TV-103-ATFGN-B2",
   price: "200 BYN / 15 804 RUB",
   color: "Олива",
 },
@@ -92,7 +92,7 @@ description: "Многофункциональный чехол под брон�
   photo2: "images/items/item1-1.jpg",
   photo3: "images/items/item1-3.jpg",
   heading: "Чехол3 под бронежилет 6094 TV-103",
-  text: "<span>Артикул</span>: TV-103-ATFGN-B3",
+  text: "TV-103-ATFGN-B3",
   price: "200 BYN / 15 804 RUB",
   color: "Олива",
 },
@@ -103,7 +103,7 @@ description: "Многофункциональный чехол под брон�
   photo2: "images/items/item1-1.jpg",
   photo3: "images/items/item1-3.jpg",
   heading: "Чехол4 под бронежилет 6094 TV-103",
-  text: "<span>Артикул</span>: TV-103-ATFGN-B4",
+  text: "TV-103-ATFGN-B4",
   price: "200 BYN / 15 804 RUB",
   color: "Олива",
 },
@@ -123,7 +123,7 @@ photo1: "images/item1.png",
 photo2: "images/items/item1-1.jpg",
 photo3: "images/items/item1-3.jpg",
 heading: "Чехол5 под бронежилет 6094 TV-103",
-text: "<span>Артикул</span>: TV-103-ATFGN-B1",
+text: "TV-103-ATFGN-B1",
 price: "200 BYN / 15 804 RUB",
 color: "Олива",
 },
@@ -134,7 +134,7 @@ photo1: "images/items/item1-1.jpg",
 photo2: "images/items/item1-3.jpg",
 photo3: "images/item1.png",
 heading: "Чехол6 под бронежилет 6094 TV-103",
-text: "<span>Артикул</span>: TV-103-ATFGN-B2",
+text: "TV-103-ATFGN-B2",
 price: "200 BYN / 15 804 RUB",
 color: "Олива",
 },
@@ -145,7 +145,7 @@ photo1: "images/items/item1-3.jpg",
 photo2: "images/items/item1-1.jpg",
 photo3: "images/item1.png",
 heading: "Чехол7 под бронежилет 6094 TV-103",
-text: "<span>Артикул</span>: TV-103-ATFGN-B3",
+text: "TV-103-ATFGN-B3",
 price: "200 BYN / 15 804 RUB",
 color: "Олива",
 },
@@ -178,7 +178,7 @@ function renderCatalog(items, containerId) {
         <div class="indicators"></div>
       </div>
       <p class="item-heading">${item.heading}</p>
-      <p class="item-text">${item.text}</p>
+      <p class="item-text"><span>Артикул</span>: ${item.text}</p>
       <p class="item-color"><span>Цвет</span>: ${item.color}</p>
       <p class="item-price">${item.price}</p>
       <button class="product-button" data-id="${item.id}">Подробнее</button>
@@ -278,31 +278,91 @@ const modalHeading = document.getElementById("modal-heading");
 const modalText = document.getElementById("modal-text");
 const modalPrice = document.getElementById("modal-price");
 const modalColor = document.getElementById("modal-color");
-const modalPhoto1 = document.getElementById("modal-photo1");
-const modalPhoto2 = document.getElementById("modal-photo2");
-const modalPhoto3 = document.getElementById("modal-photo3");
 const modalDescription = document.getElementById("modal-description");
+
+const modalSlider = document.querySelector('.modal-slider');
+const slides = document.querySelectorAll('.modal-slide');
+const prevButton = document.querySelector('.modal-prev');
+const nextButton = document.querySelector('.modal-next');
+const indicators = document.querySelectorAll('.modal-indicator');
+let currentSlide = 0;
+
+function showSlide(index) {
+  if (index >= slides.length) currentSlide = 0;
+  if (index < 0) currentSlide = slides.length - 1;
+
+  slides.forEach((slide, i) => {
+    slide.classList.remove('active');
+    if (i === currentSlide) {
+      slide.classList.add('active');
+    }
+  });
+
+  indicators.forEach((indicator, i) => {
+    indicator.classList.remove('active');
+    if (i === currentSlide) {
+      indicator.classList.add('active');
+    }
+  });
+}
+
+prevButton.addEventListener('click', () => {
+  currentSlide--;
+  showSlide(currentSlide);
+});
+
+nextButton.addEventListener('click', () => {
+  currentSlide++;
+  showSlide(currentSlide);
+});
+
+indicators.forEach((indicator, i) => {
+  indicator.addEventListener('click', () => {
+    currentSlide = i;
+    showSlide(currentSlide);
+  });
+});
 
 function openModal(itemId) {
   const product = [...items1, ...items2].find(item => item.id === itemId);
   if (product) {
     modalHeading.textContent = product.heading;
-    modalText.innerHTML = product.text;
-    modalColor.textContent = `Цвет: ${product.color}`;
-    modalPrice.textContent = `Стоимость: ${product.price}`;
-    modalPhoto1.src = product.photo1;
-    modalPhoto2.src = product.photo2;
-    modalPhoto3.src = product.photo3;
-    modalDescription.textContent = `Описание: ${product.description || ''}`;
+    modalText.textContent = product.text;
+    modalColor.textContent = product.color;
+    modalPrice.textContent = product.price;
+    modalDescription.textContent = product.description || 'Нет описания';
+    document.getElementById('modal-photo1').src = product.photo1;
+    document.getElementById('modal-photo2').src = product.photo2;
+    document.getElementById('modal-photo3').src = product.photo3;
     modal.style.display = "block";
+    showSlide(currentSlide);  // Инициализация слайдера
   }
 }
 
 closeBtn.onclick = () => modal.style.display = "none";
 window.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; };
 
+// Открытие модального окна при клике на продукт
 document.addEventListener("click", (e) => {
   if (e.target.matches(".product-button")) {
     openModal(e.target.dataset.id);
   }
 });
+
+let autoSlideInterval;
+
+const modalSliderWrapper = document.querySelector('.modal-slider-wrapper');
+
+function startSlide() {
+  autoSlideInterval = setInterval(() => {
+    currentSlide++;
+    showSlide(currentSlide);
+  }, 2000); 
+}
+
+function stopSlide() {
+  clearInterval(autoSlideInterval);
+}
+
+modalSliderWrapper.addEventListener('mouseenter', startSlide);
+modalSliderWrapper.addEventListener('mouseleave', stopSlide);
