@@ -2731,7 +2731,15 @@ font-size: 32px;
 
 
     #modal-heading {
-        font-size: 22px;
+        font-size: 20px;
+    }
+
+    .modal-content p {
+        font-size: 14px;
+    }
+
+    .modal-content {
+        padding: 15px;
     }
 
 }
