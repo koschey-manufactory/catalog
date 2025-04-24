@@ -456,6 +456,8 @@ margin-bottom: 5px;
     border: 6px solid #78866b;
     width: 80%;
     border-radius: 10px;
+    overflow-y: auto;
+  max-height: 85vh;
   }
 
 
@@ -2731,7 +2733,7 @@ font-size: 32px;
 
 
     #modal-heading {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .modal-content p {
