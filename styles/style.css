@@ -48,12 +48,17 @@ section {
 }
 
 .section-title-text {
-    font-size: 40px;
+    font-size: 36px;
     color: #78866b;
 }
 
+ .section-title-heading {
+    font-size: 36px;
+     color: #78866b;
+ }
+
 .catalog-section-title {
-    font-size: 40px;
+    font-size: 36px;
     color: #78866b;
 
 }
@@ -129,6 +134,7 @@ section {
     justify-content: space-around;
     align-items: center;
     list-style-type: none;
+    font-family: 'Inter', sans-serif;
 }
 
 .header__list li a {
@@ -175,7 +181,7 @@ section {
 
 .header__info h1 {
     height: 120px;
-    font-size: 60px;
+    font-size: 58px;
     font-family: 'Merriweather', serif;
     font-weight: 700;
     color: #ffffff;
@@ -190,7 +196,7 @@ section {
     font-size: 20px;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
-    line-height: 38px;
+    line-height: 34px;
     color: #ffffff;
     margin-bottom: 25px;
 }
@@ -750,7 +756,7 @@ margin-bottom: 5px;
 
 .price__headline {
     height: 92px;
-    font-size: 26px;
+    font-size: 24px;
     font-family: 'Merriweather', serif;
     font-weight: 700;
     line-height: 32px;
@@ -874,7 +880,7 @@ margin-bottom: 5px;
     line-height: 32px;
  }
 
- #about .section-title-text {
+ #about .section-title-heading {
     color: #000000;
 }
 
@@ -1534,8 +1540,7 @@ display: grid;
  .section-title h2, .catalog-section-title h2 {
     white-space: wrap;
     text-align: center;
-    line-height: 40px;
-    font-size: 32px;
+    
 }
 
      .images {
@@ -1567,9 +1572,14 @@ display: grid;
 
     .section-title-text {
         font-size: 32px;
+        line-height: 38px;
     }
+
+    .section-title-heading {
+
+    font-size: 36px;
     
-  
+  }
 
     .header__text {
        
@@ -1741,6 +1751,11 @@ font-size: 32px;
  }
 
 
+ .section-title-text {
+     line-height: 40px;
+ }
+
+
 
      .catalog_items {
         display: none;
@@ -1851,13 +1866,20 @@ font-size: 32px;
     
     .section-title-text {
         font-size: 30px;
+           line-height: 34px;
     }
+
+
+      .section-title-heading {
+        font-size: 34px;
+    }
+
 
     .section-title h2, .catalog-section-title h2 {
         white-space: wrap;
         text-align: center;
-        line-height: 40px;
-        font-size: 30px;
+     
+
     }
 
 
@@ -1982,11 +2004,17 @@ font-size: 32px;
         background-color: #BDAE82;
     } */
 
+
+    .section-title-text {
+        font-size: 28px;
+         line-height: 32px;
+    }
+
     .section-title h2, .catalog-section-title h2 {
         white-space: wrap;
         text-align: center;
-        line-height: 40px;
-        font-size: 28px;
+       
+       
     }
     
     .section-title, .catalog-section-title {
@@ -2098,10 +2126,14 @@ font-size: 32px;
         
          }
         
-         .section-title h2, .catalog-section-title h2 {
-            font-size: 26px;
+.section-title-text {
+font-size: 26px;
             line-height: 36px;
-        }
+}
+
+
+
+     
 
         .catalog__item {
             padding: 35px 25px;
@@ -2118,6 +2150,7 @@ font-size: 32px;
 
     .header__info h1 {
         margin-bottom: 55px;
+        font-size: 40px;
         
     }
 
@@ -2157,7 +2190,7 @@ font-size: 32px;
     }
 
 
-    .section-title h2, .catalog-section-title h2 {
+    .section-title-text {
         font-size: 24px;
     }
 
@@ -2180,7 +2213,7 @@ font-size: 32px;
 
 
     .header__info h1 {
-        font-size: 40px;
+        font-size: 36px;
         margin-bottom: 55px;
         
     }
@@ -2267,9 +2300,19 @@ font-size: 32px;
 
 
 
-    .section-title h2, .catalog-section-title h2 {
+    .section-title-text {
         font-size: 22px;
+        line-height: 30px;
+    
     }
+
+
+     .section-title-heading {
+        font-size: 34px;
+        line-height: 38px;
+    
+    }
+
 
     .section-title, .catalog-section-title {
         width: 70%;
@@ -2317,18 +2360,26 @@ font-size: 32px;
 
 @media screen and (max-width: 495px) { 
 
+
+
+      .header__info h1 {
+        font-size: 34px;
+        margin-bottom: 55px;
+        
+    }
+
     .price__block {
         width: 95%   
     }
    
-    .section-title-text {
+    /* .section-title-text {
         font-size: 28px;
 
-    }
+    } */
 
-    .section-title h2, .catalog-section-title h2 {
-        line-height: 36px;
-    }
+    /* .section-title-text {
+        line-height: 32px;
+    } */
 
     .about__content p {
         font-size: 16px;
@@ -2372,6 +2423,16 @@ font-size: 32px;
 }
 
 @media screen and (max-width: 470px) { 
+
+
+      .header__info h1 {
+        font-size: 36px;
+        height: auto;
+        margin-bottom: 35px;
+        line-height: 48px;
+
+        
+    }
 
 
     .section-title {
@@ -2457,11 +2518,7 @@ font-size: 32px;
     }
 
 
-    .header__info h1 {
-        font-size: 36px;
-        margin-bottom: 55px;
-        
-    }
+ 
 
     .header__text {
         font-size: 16px;
@@ -2471,7 +2528,7 @@ font-size: 32px;
 
    
 
-    .section-title h2, .catalog-section-title h2 {
+    .section-title-text {
         font-size: 18px;
         line-height: 26px;
     }
@@ -2487,7 +2544,7 @@ font-size: 32px;
     }
 
     .price__headline {
-        font-size: 26px;
+        font-size: 20px;
     }
     
     .price__cost {
@@ -2513,10 +2570,17 @@ font-size: 32px;
 @media screen and (max-width: 440px) { 
 .header__info h1 {
     font-size: 30px;
-    line-height: 38px;
-    margin-bottom: 45px;
+   line-height: 42px;
+    margin-bottom: 35px;
     
 }
+
+
+    .section-title-heading {
+        font-size: 30px;
+        line-height: 34px;
+    
+    }
 
 .header__text {
     font-size: 16px;
@@ -2566,7 +2630,7 @@ font-size: 32px;
  }
 
 
- .section-title h2, .catalog-section-title h2 {
+ .section-title-text {
     font-size: 18px;
     line-height: 24px;
 }
@@ -2638,7 +2702,7 @@ font-size: 32px;
     .header__info h1 {
         font-size: 28px;
         line-height: 38px;
-        margin-bottom: 40px;
+        margin-bottom: 35px;
         
     }
 
@@ -2652,6 +2716,7 @@ font-size: 32px;
     .header__text {
         font-size: 16px;
         line-height: 24px;
+        margin-bottom: 35px;
     
     }
 
@@ -2692,7 +2757,7 @@ font-size: 32px;
     
     }
     
-    .section-title h2, .catalog-section-title h2 {
+    .section-title-text {
         line-height: 30px;
     }
 
@@ -2717,8 +2782,9 @@ font-size: 32px;
         max-width: 1270px; 
     }
     
-    .section-title h2, .catalog-section-title h2 {
+    .section-title-text {
         font-size: 16px;
+        line-height: 16px;
         line-height: 24px;
     }
     
