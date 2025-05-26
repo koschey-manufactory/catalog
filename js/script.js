@@ -364,5 +364,10 @@ function stopSlide() {
   clearInterval(autoSlideInterval);
 }
 
-modalSliderWrapper.addEventListener('mouseenter', startSlide);
-modalSliderWrapper.addEventListener('mouseleave', stopSlide);
+modalSliderWrapper.addEventListener('mouseleave', startSlide);
+modalSliderWrapper.addEventListener('mouseenter', stopSlide);
+modalSliderWrapper.addEventListener('touchstart', (e) => {
+  if (e.touches.length > 1) {
+    stopSlide(); // если два и более пальца — это зум, останавливаем автослайдер
+  }
+});
