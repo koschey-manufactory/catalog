@@ -264,6 +264,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
       imagesContainer.addEventListener("mouseenter", startAutoSlide);
       imagesContainer.addEventListener("mouseleave", stopAutoSlide);
+
+let isZooming = false;
+
       imagesContainer.addEventListener('touchstart', (e) => {
   if (e.touches.length > 1) {
     stopAutoSlide(); // остановить автослайд при зуме
@@ -273,6 +276,13 @@ document.addEventListener("DOMContentLoaded", function () {
 imagesContainer.addEventListener('touchend', (e) => {
   // если касание завершилось, и больше нет зума
   if (e.touches.length === 0 && isZooming) {
+    isZooming = false;
+    startAutoSlide();
+  }
+});
+
+imagesContainer.addEventListener('touchcancel', (e) => {
+  if (isZooming) {
     isZooming = false;
     startAutoSlide();
   }
