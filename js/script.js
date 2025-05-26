@@ -269,6 +269,14 @@ document.addEventListener("DOMContentLoaded", function () {
     stopAutoSlide(); // остановить автослайд при зуме
   }
 });
+// Возобновление после окончания зума
+imagesContainer.addEventListener('touchend', (e) => {
+  // если касание завершилось, и больше нет зума
+  if (e.touches.length === 0 && isZooming) {
+    isZooming = false;
+    startAutoSlide();
+  }
+});
 
       showImage(currentIndex);
 
