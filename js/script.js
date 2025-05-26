@@ -364,10 +364,14 @@ function stopSlide() {
   clearInterval(autoSlideInterval);
 }
 
-modalSliderWrapper.addEventListener('mouseleave', startSlide);
-modalSliderWrapper.addEventListener('mouseenter', stopSlide);
-modalSliderWrapper.addEventListener('touchstart', (e) => {
-  if (e.touches.length > 1) {
-    stopSlide(); // если два и более пальца — это зум, останавливаем автослайдер
-  }
-});
+modalSliderWrapper.addEventListener('mouseover', stopSlide);
+modalSliderWrapper.addEventListener('mouseout', startSlide);
+
+modalSliderWrapper.addEventListener('touchstart', stopSlide);
+modalSliderWrapper.addEventListener('touchend', startSlide);
+
+// modalSliderWrapper.addEventListener('touchstart', (e) => {
+//   if (e.touches.length > 1) {
+//     stopSlide(); // если два и более пальца — это зум, останавливаем автослайдер
+//   }
+// });
