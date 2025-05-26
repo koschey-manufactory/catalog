@@ -264,8 +264,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
       imagesContainer.addEventListener("mouseenter", startAutoSlide);
       imagesContainer.addEventListener("mouseleave", stopAutoSlide);
+      imagesContainer.addEventListener('touchstart', (e) => {
+  if (e.touches.length > 1) {
+    stopAutoSlide(); // остановить автослайд при зуме
+  }
+});
 
       showImage(currentIndex);
+
+
+
   });
 });
 
