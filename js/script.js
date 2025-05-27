@@ -367,8 +367,8 @@ function stopSlide() {
   clearInterval(autoSlideInterval);
 }
 
-modalSliderWrapper.addEventListener('mouseover', stopSlide);
-modalSliderWrapper.addEventListener('mouseout', startSlide);
+modalSliderWrapper.addEventListener('mouseleave', stopSlide);
+modalSliderWrapper.addEventListener('mouseenter', startSlide);
 
 modalSliderWrapper.addEventListener('touchstart', stopSlide);
 modalSliderWrapper.addEventListener('touchend', startSlide);
