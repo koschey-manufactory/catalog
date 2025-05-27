@@ -296,7 +296,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 🔧 Показываем первую картинку и сразу запускаем слайдер
     showImage(currentIndex);
-    startAutoSlide(); // 🔧 автозапуск сразу при загрузке
+ // 🔧 автозапуск сразу при загрузке
   });
 });
 
