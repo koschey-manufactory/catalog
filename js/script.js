@@ -205,6 +205,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const indicatorsContainer = slider.querySelector(".indicators");
       let currentIndex = 0;
       let interval;
+       let isZooming = false;
 
       function showImage(index) {
           images.forEach((img, i) => {
@@ -224,11 +225,14 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       function startAutoSlide() {
-          interval = setInterval(nextImage, 2000);
+          if (!interval) {
+        interval = setInterval(nextImage, 2000);
+      }
       }
 
       function stopAutoSlide() {
           clearInterval(interval);
+           interval = null;
       }
 
       function updateIndicators() {
@@ -265,33 +269,34 @@ document.addEventListener("DOMContentLoaded", function () {
       imagesContainer.addEventListener("mouseenter", startAutoSlide);
       imagesContainer.addEventListener("mouseleave", stopAutoSlide);
 
-let isZooming = false;
-
-      imagesContainer.addEventListener('touchstart', (e) => {
-  if (e.touches.length > 1) {
-    stopAutoSlide(); // остановить автослайд при зуме
-  }
-});
-// Возобновление после окончания зума
-imagesContainer.addEventListener('touchend', (e) => {
-  // если касание завершилось, и больше нет зума
-  if (e.touches.length === 0 && isZooming) {
-    isZooming = false;
-    startAutoSlide();
-  }
-});
-
-imagesContainer.addEventListener('touchcancel', (e) => {
-  if (isZooming) {
-    isZooming = false;
-    startAutoSlide();
-  }
-});
-
-      showImage(currentIndex);
 
 
+ imagesContainer.addEventListener("touchstart", (e) => {
+      if (e.touches.length > 1) {
+        stopAutoSlide();
+        isZooming = true;
+      } else {
+        stopAutoSlide(); // обычный тап тоже останавливает
+      }
+    });
 
+    imagesContainer.addEventListener("touchend", (e) => {
+      if (e.touches.length === 0 && isZooming) {
+        isZooming = false;
+        startAutoSlide(); // 🔧 Возобновление после зума
+      }
+    });
+
+    imagesContainer.addEventListener("touchcancel", (e) => {
+      if (isZooming) {
+        isZooming = false;
+        startAutoSlide(); // 🔧 Возобновление после отмены зума
+      }
+    });
+
+    // 🔧 Показываем первую картинку и сразу запускаем слайдер
+    showImage(currentIndex);
+    startAutoSlide(); // 🔧 автозапуск сразу при загрузке
   });
 });
 
