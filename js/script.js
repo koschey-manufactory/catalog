@@ -428,20 +428,17 @@ function openModal(itemId) {
     });
 
     modal.classList.add("open");
-    modal.style.display = "block";
     showSlide(currentSlide);
   }
 }
 
 closeBtn.onclick = () => {
   modal.classList.remove("open");
-  modal.style.display = "none";
 };
 
 window.onclick = (e) => {
   if (e.target === modal) {
     modal.classList.remove("open");
-    modal.style.display = "none";
   }
 };
 
@@ -451,19 +448,19 @@ document.addEventListener("click", (e) => {
   }
 });
 
-let autoSlideInterval;
+// let autoSlideInterval;
 
 
-function startSlide() {
-  autoSlideInterval = setInterval(() => {
-    currentSlide++;
-    showSlide(currentSlide);
-  }, 2000); 
-}
+// function startSlide() {
+//   autoSlideInterval = setInterval(() => {
+//     currentSlide++;
+//     showSlide(currentSlide);
+//   }, 2000); 
+// }
 
-function stopSlide() {
-  clearInterval(autoSlideInterval);
-}
+// function stopSlide() {
+//   clearInterval(autoSlideInterval);
+// }
 
 // modalSlider.addEventListener('mouseenter', startSlide);
 // modalSlider.addEventListener('mouseleave', stopSlide);
@@ -479,29 +476,33 @@ function stopSlide() {
 
 let startX = 0;
 let endX = 0;
-
-modalSlider.addEventListener("touchstart", (e) => {
-  startX = e.touches[0].clientX;
-});
-
-modalSlider.addEventListener("touchend", (e) => {
-  endX = e.changedTouches[0].clientX;
-  handleSwipe();
-});
+let isZooming = false;
 
 function handleSwipe() {
-  const swipeThreshold = 50; // минимальное расстояние для срабатывания свайпа
+  const swipeThreshold = 50;
   const swipeDistance = endX - startX;
 
   if (Math.abs(swipeDistance) > swipeThreshold) {
     if (swipeDistance < 0) {
-      // свайп влево
       currentSlide++;
-      showSlide(currentSlide);
     } else {
-      // свайп вправо
       currentSlide--;
-      showSlide(currentSlide);
     }
+    showSlide(currentSlide);
   }
 }
+
+modalSlider.addEventListener("touchstart", (e) => {
+  if (e.touches.length > 1) {
+    isZooming = true;
+    return;
+  }
+  isZooming = false;
+  startX = e.touches[0].clientX;
+});
+
+modalSlider.addEventListener("touchend", (e) => {
+  if (isZooming) return;
+  endX = e.changedTouches[0].clientX;
+  handleSwipe();
+});
