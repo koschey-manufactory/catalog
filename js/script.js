@@ -208,6 +208,10 @@ function initSlider(sliderElement, photos) {
   const nextButton = sliderElement.querySelector(".next");
   let autoSlideInterval;
 
+   let isTouching = false;
+  let startX = 0;
+  let isZooming = false;
+
   // Очищаем контейнеры
   imagesContainer.innerHTML = "";
   indicatorsContainer.innerHTML = "";
@@ -262,7 +266,9 @@ function initSlider(sliderElement, photos) {
   }
 
   function startAutoSlide() {
-    autoSlideInterval = setInterval(nextSlide, 2000);
+    if (!isMobile()) {
+      autoSlideInterval = setInterval(nextSlide, 2000);
+    }
   }
 
   function stopAutoSlide() {
@@ -277,10 +283,49 @@ function initSlider(sliderElement, photos) {
     nextSlide();
   });
 
-  imagesContainer.addEventListener("mouseenter", startAutoSlide);
-  imagesContainer.addEventListener("mouseleave", stopAutoSlide);
+if (!isMobile()) {
+    imagesContainer.addEventListener("mouseenter", startAutoSlide);
+    imagesContainer.addEventListener("mouseleave", stopAutoSlide);
+  }
+
+  imagesContainer.addEventListener("touchstart", (e) => {
+    if (e.touches.length > 1) {
+      isZooming = true;
+      stopAutoSlide();
+      return;
+    }
+    isTouching = true;
+    startX = e.touches[0].clientX;
+  });
+
+  imagesContainer.addEventListener("touchmove", (e) => {
+    if (isZooming) return;
+    if (!isTouching) return;
+
+    const deltaX = e.touches[0].clientX - startX;
+    if (Math.abs(deltaX) > 50) {
+      if (deltaX > 0) {
+        prevSlide();
+      } else {
+        nextSlide();
+      }
+      isTouching = false; // чтобы не листал каждый пиксель
+    }
+  });
+
+  imagesContainer.addEventListener("touchend", () => {
+    if (isZooming) {
+      isZooming = false;
+    }
+    isTouching = false;
+  });
 
   showSlide(currentSlide);
+
+  // ✅ добавлено: проверка на мобильное устройство
+  function isMobile() {
+    return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  }
   
 }
 
@@ -297,7 +342,6 @@ document.querySelectorAll(".catalog__item").forEach(card => {
     initSlider(slider, photos);
   }
 });
-
 
 
 
