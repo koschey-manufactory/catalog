@@ -196,14 +196,17 @@ section {
     font-size: 20px;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
-    color: #000000;
     background-color: #78866b;
-    border: 0px;
     border: #0000000a 2px solid;
     cursor: pointer;
 }
 
-.header__button:hover {
+.header__button a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.header__button a:hover {
     color: #ffffff;
 }
 
@@ -676,6 +679,7 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    justify-content: space-between;
     padding: 40px; 
     width: 100%;
     height: auto;
@@ -704,13 +708,16 @@ section {
 }
 
 .price__list {
+    width: 95%;
+    height: auto;
+    height: max-content;
     margin-bottom: 40px;
     font-size: 18px;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
-    line-height: 36px;
+    line-height: 28px;
     text-align: center;
-    color: #ffffff;  
+    color: #ffffff; 
 }
 
 .price__button {
@@ -764,8 +771,10 @@ section {
 }
 
 .skills__item h3 {
+    height: auto;
     margin-bottom: 23px;
     font-size: 20px;
+    line-height: 24px;
     text-align: center;
     font-family: 'Inter', sans-serif;
     font-weight: 700;
@@ -775,6 +784,7 @@ section {
  .skills__item p {
     width: 280px;
     font-size: 18px;
+    line-height: 22px;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     text-align: center; 
@@ -797,7 +807,7 @@ section {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     text-align: center; 
-    line-height: 32px;
+    line-height: 30px;
 }
 
 #about .section-title-heading {
@@ -1092,6 +1102,10 @@ footer .container {
         padding: 25px;
         width: 85%;
     }
+
+    .skills__item h3 {
+    font-size: 18px;
+    }
 }
 
 
@@ -1166,6 +1180,12 @@ footer .container {
         height: auto;
         max-height: 540px;
         transition: opacity 0.5s ease-in-out;
+    }
+
+    .skills__item h3 {
+    height: 48px;
+    align-content: center;
+    font-size: 18px;
     }
 
     /* burger menu */
@@ -1335,6 +1355,10 @@ footer .container {
         margin-bottom: 50px;
     }
 
+    .price__list {
+        width: 80%;
+    }
+
     .container {
         max-width: 100%; 
         padding:  0 40px;
@@ -1465,6 +1489,7 @@ footer .container {
     }
 
     .skills__item h3 {
+        height: auto;
         font-size: 20px;
         margin-bottom: 23px;
     }
@@ -1697,6 +1722,10 @@ footer .container {
         padding-top: 40px;  
     }
 
+    .price__list {
+        width: 95%;
+    }
+
     #modal-heading {
         font-size: 28px;
     }
@@ -1803,6 +1832,10 @@ footer .container {
     
     .item-price {
         font-size: 18px;
+    }
+
+    .price__list {
+        width: 100%;
     }
 
     .menu__btn {
@@ -1927,7 +1960,7 @@ footer .container {
         font-size: 18px;
      }
 
-     .item-price {
+    .item-price {
         margin-bottom: 10px;
         font-size: 16px; 
     }
