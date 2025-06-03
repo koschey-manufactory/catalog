@@ -156,6 +156,91 @@ color: "Олива",
 ]
 
 
+// Утилитарные подсумки
+
+let items7 = [
+  {
+id: "catalog__item8",
+number: "8",
+photo1: "images/items/item8-1.webp",
+photo2: "images/items/item8-2.webp",
+photo3: "images/items/item8-3.webp",
+photo4: "images/items/item8-4.webp",
+photo5: "images/items/item8-5.webp",
+photo6: "images/items/item8-6.webp",
+photo7: "images/items/item8-7.webp",
+heading: "Административный подсумок",
+text: "TV-103-ATFGN-B1",
+price: "200 BYN / 15 804 RUB",
+color: "Олива",
+},
+{
+id: "catalog__item9",
+number: "9",
+photo1: "images/items/item1-1.jpg",
+photo2: "images/items/item1-3.jpg",
+photo3: "images/item1.png",
+photo4: "images/items/item1-1.jpg",
+heading: "Чехол6 под бронежилет 6094 TV-103",
+text: "TV-103-ATFGN-B2",
+price: "200 BYN / 15 804 RUB",
+color: "Олива",
+},
+{
+id: "catalog__item10",
+number: "10",
+photo1: "images/items/item1-3.jpg",
+photo2: "images/items/item1-1.jpg",
+photo3: "images/item1.png",
+heading: "Чехол7 под бронежилет 6094 TV-103",
+text: "TV-103-ATFGN-B3",
+price: "200 BYN / 15 804 RUB",
+color: "Олива",
+},
+]
+
+// Прочие подсумки
+
+let items9 = [
+  {
+id: "catalog__item11",
+number: "11",
+photo1: "images/item1.png",
+photo2: "images/items/item1-1.jpg",
+photo3: "images/items/item1-3.jpg",
+photo4: "images/items/item1-3.jpg",
+heading: "Чехол5 под бронежилет 6094 TV-103",
+text: "TV-103-ATFGN-B1",
+price: "200 BYN / 15 804 RUB",
+color: "Олива",
+},
+{
+id: "catalog__item12",
+number: "12",
+photo1: "images/items/item1-1.jpg",
+photo2: "images/items/item1-3.jpg",
+photo3: "images/item1.png",
+photo4: "images/items/item1-1.jpg",
+heading: "Чехол6 под бронежилет 6094 TV-103",
+text: "TV-103-ATFGN-B2",
+price: "200 BYN / 15 804 RUB",
+color: "Олива",
+},
+{
+id: "catalog__item13",
+number: "13",
+photo1: "images/items/item1-3.jpg",
+photo2: "images/items/item1-1.jpg",
+photo3: "images/item1.png",
+heading: "Чехол7 под бронежилет 6094 TV-103",
+text: "TV-103-ATFGN-B3",
+price: "200 BYN / 15 804 RUB",
+color: "Олива",
+},
+]
+
+
+
 
 // function to render items
 function renderCatalog(items, containerId) {
@@ -195,6 +280,7 @@ function renderCatalog(items, containerId) {
 
 renderCatalog(items1, "catalogItems1");
 renderCatalog(items2, "catalogItems2");
+renderCatalog(items7, "catalogItems7");
 
 
 
@@ -330,13 +416,13 @@ if (!isMobile()) {
 }
 
 // Использование (для каждой карточки):
-const products = [...items1, ...items2];
+const products = [...items1, ...items2,...items7];
 document.querySelectorAll(".catalog__item").forEach(card => {
   const productId = card.id;
   const product = products.find(p => p.id === productId);
   if (!product) return;
 
-  const photos = [product.photo1, product.photo2, product.photo3, product.photo4, product.photo5].filter(Boolean);
+  const photos = [product.photo1, product.photo2, product.photo3, product.photo4, product.photo5, product.photo6, product.photo7].filter(Boolean);
   const slider = card.querySelector(".slider");
   if (slider) {
     initSlider(slider, photos);
@@ -391,7 +477,7 @@ nextButton.addEventListener('click', () => {
 });
 
 function openModal(itemId) {
-  const product = [...items1, ...items2].find(item => item.id === itemId);
+  const product = [...items1, ...items2, ...items7].find(item => item.id === itemId);
   if (product) {
     currentSlide = 0;
 
@@ -402,7 +488,7 @@ function openModal(itemId) {
     modalDescription.textContent = product.description || 'Нет описания';
 
     // === 🔥 САМЫЕ ГЛАВНЫЕ ИЗМЕНЕНИЯ: динамическое создание фото и индикаторов ===
-    const photos = [product.photo1, product.photo2, product.photo3, product.photo4, product.photo5].filter(Boolean);
+    const photos = [product.photo1, product.photo2, product.photo3, product.photo4, product.photo5, product.photo6, product.photo7].filter(Boolean);
 
     // Очищаем и создаём слайды
     modalSlider.innerHTML = '';
