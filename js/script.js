@@ -66,90 +66,45 @@ let items1 = [
 id: "catalog__item1",
 number: "1",
 photo1: "images/item1.png",
-photo2: "images/items/item1-1.jpg",
-photo3: "images/items/item1-3.jpg",
-photo4: "images/items/item1-1.jpg",
-photo5: "images/items/item1-3.jpg",
+photo2: "images/items/item1/item1-1.jpg",
+photo3: "images/items/item1/item1-3.jpg",
+photo4: "images/items/item1/item1-1.jpg",
+photo5: "images/items/item1/item1-3.jpg",
 heading: "Чехол1 под бронежилет 6094 TV-103",
+heading2: "Чехол1 под бронежилет 6094 TV-103",
 text: "TV-103-ATFGN-B1",
 price: "200 BYN / 15 804 RUB",
 color: "Олива",
 description: "Многофункциональный чехол под бронежилет с системой быстрого сброса, регулировкой размера и отделениями для размещения бронеэлементов. Выпускается в двух размерах и имеет дополнительную настройку размеров. Компактный медицинский EDC подсумок Шанс UP-129 рассчитан для ношения на поясном ремне, либо в качестве карманной аптечки. Производитель оставляет за собой право вносить изменения в технические характеристики, комплектацию и конструкцию, не ухудшающие эксплуатационные характеристики изделий, без предварительного уведомления.",
 },
-{
-  id: "catalog__item2",
-  number: "2",
-  photo1: "images/items/item1-1.jpg",
-  photo2: "images/item1.png",
-  photo3: "images/items/item1-3.jpg",
-  heading: "Чехол2 под бронежилет 6094 TV-103",
-  text: "TV-103-ATFGN-B2",
-  price: "200 BYN / 15 804 RUB",
-  color: "Олива",
-},
-{
-  id: "catalog__item3",
-  number: "3",
-  photo1: "images/item1.png",
-  photo2: "images/items/item1-1.jpg",
-  photo3: "images/items/item1-3.jpg",
-  heading: "Чехол3 под бронежилет 6094 TV-103",
-  text: "TV-103-ATFGN-B3",
-  price: "200 BYN / 15 804 RUB",
-  color: "Олива",
-},
-{
-  id: "catalog__item4",
-  number: "4",
-  photo1: "images/item1.png",
-  photo2: "images/items/item1-1.jpg",
-  photo3: "images/items/item1-3.jpg",
-  heading: "Чехол4 под бронежилет 6094 TV-103",
-  text: "TV-103-ATFGN-B4",
-  price: "200 BYN / 15 804 RUB",
-  color: "Олива",
-},
 ]
-
-
-
 
 
 // catalog 2
 
 let items2 = [
+
+]
+
+// Медицинские подсумки
+
+let items6 = [
   {
-id: "catalog__item5",
-number: "5",
-photo1: "images/item1.png",
-photo2: "images/items/item1-1.jpg",
-photo3: "images/items/item1-3.jpg",
-photo4: "images/items/item1-3.jpg",
-heading: "Чехол5 под бронежилет 6094 TV-103",
+id: "catalog__item2",
+number: "2",
+photo1: "images/items/item2/item2-1.webp",
+photo2: "images/items/item2/item2-2.webp",
+photo3: "images/items/item2/item2-3.webp",
+photo4: "images/items/item2/item2-4.webp",
+photo5: "images/items/item2/item2-5.webp",
+photo6: "images/items/item2/item2-6.webp",
+photo7: "images/items/item2/item2-7.webp",
+photo8: "images/items/item2/item2-8.webp",
+photo9: "images/items/item2/item2-9.webp",
+photo10: "images/items/item2/item2-10.webp",
+heading: "Вытяжной медицинский подсумок",
+heading2: "Вытяжной медицинский подсумок",
 text: "TV-103-ATFGN-B1",
-price: "200 BYN / 15 804 RUB",
-color: "Олива",
-},
-{
-id: "catalog__item6",
-number: "6",
-photo1: "images/items/item1-1.jpg",
-photo2: "images/items/item1-3.jpg",
-photo3: "images/item1.png",
-photo4: "images/items/item1-1.jpg",
-heading: "Чехол6 под бронежилет 6094 TV-103",
-text: "TV-103-ATFGN-B2",
-price: "200 BYN / 15 804 RUB",
-color: "Олива",
-},
-{
-id: "catalog__item7",
-number: "7",
-photo1: "images/items/item1-3.jpg",
-photo2: "images/items/item1-1.jpg",
-photo3: "images/item1.png",
-heading: "Чехол7 под бронежилет 6094 TV-103",
-text: "TV-103-ATFGN-B3",
 price: "200 BYN / 15 804 RUB",
 color: "Олива",
 },
@@ -162,40 +117,164 @@ let items7 = [
   {
 id: "catalog__item8",
 number: "8",
-photo1: "images/items/item8-1.webp",
-photo2: "images/items/item8-2.webp",
-photo3: "images/items/item8-3.webp",
-photo4: "images/items/item8-4.webp",
-photo5: "images/items/item8-5.webp",
-photo6: "images/items/item8-6.webp",
-photo7: "images/items/item8-7.webp",
+photo1: "images/items/item8/item8-1.webp",
+photo2: "images/items/item8/item8-2.webp",
+photo3: "images/items/item8/item8-3.webp",
+photo4: "images/items/item8/item8-4.webp",
+photo5: "images/items/item8/item8-5.webp",
+photo6: "images/items/item8/item8-6.webp",
+photo7: "images/items/item8/item8-7.webp",
 heading: "Административный подсумок",
+heading2: "Административный подсумок",
 text: "TV-103-ATFGN-B1",
 price: "200 BYN / 15 804 RUB",
 color: "Олива",
 },
 {
+id: "catalog__item3",
+number: "3",
+photo1: "images/items/item3/item3-1.webp",
+photo2: "images/items/item3/item3-2.webp",
+photo3: "images/items/item3/item3-3.webp",
+photo4: "images/items/item3/item3-4.webp",
+photo5: "images/items/item3/item3-5.webp",
+photo6: "images/items/item3/item3-6.webp",
+heading: "Подсумок-ключница",
+heading2: "Подсумок-ключница плоского профиля с креплением Molle",
+text: "TV-103-ATFGN-B2",
+price: "15 BYN / 15 804 RUB",
+color: "Олива",
+description: "Отличное решение для задействования боковых ячеек Molle на рюкзаках. Внутри петля для крепления ключей, небольшого фонарика/ мультитула и.т.п. В наличии расцветки: олива, мох, мультикам, койот, хаки, партизан (сс-лето), цифра, вудланд.",
+},
+{
+id: "catalog__item4",
+number: "4",
+photo1: "images/items/item4/item4-1.webp",
+photo2: "images/items/item3/item3-2.webp",
+photo3: "images/items/item3/item3-3.webp",
+photo4: "images/items/item3/item3-4.webp",
+photo5: "images/items/item3/item3-5.webp",
+photo6: "images/items/item3/item3-6.webp",
+heading: "Подсумок-ключница",
+heading2: "Подсумок-ключница плоского профиля с креплением Molle",
+text: "TV-103-ATFGN-B2",
+price: "15 BYN / 15 804 RUB",
+color: "Олива",
+description: "Отличное решение для задействования боковых ячеек Molle на рюкзаках. Внутри петля для крепления ключей, небольшого фонарика/ мультитула и.т.п. В наличии расцветки: олива, мох, мультикам, койот, хаки, партизан (сс-лето), цифра, вудланд.",
+},
+{
+id: "catalog__item5",
+number: "5",
+photo1: "images/items/item5/item5-1.webp",
+photo2: "images/items/item3/item3-2.webp",
+photo3: "images/items/item3/item3-3.webp",
+photo4: "images/items/item3/item3-4.webp",
+photo5: "images/items/item3/item3-5.webp",
+photo6: "images/items/item3/item3-6.webp",
+heading: "Подсумок-ключница",
+heading2: "Подсумок-ключница плоского профиля с креплением Molle",
+text: "TV-103-ATFGN-B2",
+price: "15 BYN / 15 804 RUB",
+color: "Олива",
+description: "Отличное решение для задействования боковых ячеек Molle на рюкзаках. Внутри петля для крепления ключей, небольшого фонарика/ мультитула и.т.п. В наличии расцветки: олива, мох, мультикам, койот, хаки, партизан (сс-лето), цифра, вудланд.",
+},
+{
+id: "catalog__item6",
+number: "6",
+photo1: "images/items/item6/item6-1.webp",
+photo2: "images/items/item3/item3-2.webp",
+photo3: "images/items/item3/item3-3.webp",
+photo4: "images/items/item3/item3-4.webp",
+photo5: "images/items/item3/item3-5.webp",
+photo6: "images/items/item3/item3-6.webp",
+heading: "Подсумок-ключница",
+heading2: "Подсумок-ключница плоского профиля с креплением Molle",
+text: "TV-103-ATFGN-B2",
+price: "15 BYN / 15 804 RUB",
+color: "Олива",
+description: "Отличное решение для задействования боковых ячеек Molle на рюкзаках. Внутри петля для крепления ключей, небольшого фонарика/ мультитула и.т.п. В наличии расцветки: олива, мох, мультикам, койот, хаки, партизан (сс-лето), цифра, вудланд.",
+},
+{
+id: "catalog__item7",
+number: "7",
+photo1: "images/items/item7/item7-1.webp",
+photo2: "images/items/item3/item3-2.webp",
+photo3: "images/items/item3/item3-3.webp",
+photo4: "images/items/item3/item3-4.webp",
+photo5: "images/items/item3/item3-5.webp",
+photo6: "images/items/item3/item3-6.webp",
+heading: "Подсумок-ключница",
+heading2: "Подсумок-ключница плоского профиля с креплением Molle",
+text: "TV-103-ATFGN-B2",
+price: "15 BYN / 15 804 RUB",
+color: "Олива",
+description: "Отличное решение для задействования боковых ячеек Molle на рюкзаках. Внутри петля для крепления ключей, небольшого фонарика/ мультитула и.т.п. В наличии расцветки: олива, мох, мультикам, койот, хаки, партизан (сс-лето), цифра, вудланд.",
+},
+{
 id: "catalog__item9",
 number: "9",
-photo1: "images/items/item1-1.jpg",
-photo2: "images/items/item1-3.jpg",
-photo3: "images/item1.png",
-photo4: "images/items/item1-1.jpg",
-heading: "Чехол6 под бронежилет 6094 TV-103",
+photo1: "images/items/item9/item9-1.webp",
+photo2: "images/items/item9/item9-2.webp",
+photo3: "images/items/item3/item3-3.webp",
+photo4: "images/items/item3/item3-4.webp",
+photo5: "images/items/item3/item3-5.webp",
+photo6: "images/items/item3/item3-6.webp",
+heading: "Подсумок-ключница",
+heading2: "Подсумок-ключница плоского профиля с креплением Molle",
 text: "TV-103-ATFGN-B2",
-price: "200 BYN / 15 804 RUB",
+price: "15 BYN / 15 804 RUB",
 color: "Олива",
+description: "Отличное решение для задействования боковых ячеек Molle на рюкзаках. Внутри петля для крепления ключей, небольшого фонарика/ мультитула и.т.п. В наличии расцветки: олива, мох, мультикам, койот, хаки, партизан (сс-лето), цифра, вудланд.",
 },
 {
 id: "catalog__item10",
 number: "10",
-photo1: "images/items/item1-3.jpg",
-photo2: "images/items/item1-1.jpg",
-photo3: "images/item1.png",
-heading: "Чехол7 под бронежилет 6094 TV-103",
-text: "TV-103-ATFGN-B3",
-price: "200 BYN / 15 804 RUB",
+photo1: "images/items/item10/item10-1.webp",
+photo2: "images/items/item10/item10-2.webp",
+photo3: "images/items/item3/item3-2.webp",
+photo4: "images/items/item3/item3-3.webp",
+photo5: "images/items/item3/item3-4.webp",
+photo6: "images/items/item3/item3-5.webp",
+photo7: "images/items/item3/item3-6.webp",
+heading: "Подсумок-ключница",
+heading2: "Подсумок-ключница плоского профиля с креплением Molle",
+text: "TV-103-ATFGN-B2",
+price: "15 BYN / 15 804 RUB",
 color: "Олива",
+description: "Отличное решение для задействования боковых ячеек Molle на рюкзаках. Внутри петля для крепления ключей, небольшого фонарика/ мультитула и.т.п. В наличии расцветки: олива, мох, мультикам, койот, хаки, партизан (сс-лето), цифра, вудланд.",
+},
+{
+id: "catalog__item11",
+number: "11",
+photo1: "images/items/item11/item11-1.webp",
+photo2: "images/items/item3/item3-2.webp",
+photo3: "images/items/item3/item3-3.webp",
+photo4: "images/items/item3/item3-4.webp",
+photo5: "images/items/item3/item3-5.webp",
+photo6: "images/items/item3/item3-6.webp",
+heading: "Подсумок-ключница",
+heading2: "Подсумок-ключница плоского профиля с креплением Molle",
+text: "TV-103-ATFGN-B2",
+price: "15 BYN / 15 804 RUB",
+color: "Олива",
+description: "Отличное решение для задействования боковых ячеек Molle на рюкзаках. Внутри петля для крепления ключей, небольшого фонарика/ мультитула и.т.п. В наличии расцветки: олива, мох, мультикам, койот, хаки, партизан (сс-лето), цифра, вудланд.",
+},
+{
+id: "catalog__item12",
+number: "10",
+photo1: "images/items/item12/item12-2.webp",
+photo2: "images/items/item12/item12-1.webp",
+photo3: "images/items/item3/item3-2.webp",
+photo4: "images/items/item3/item3-3.webp",
+photo5: "images/items/item3/item3-4.webp",
+photo6: "images/items/item3/item3-5.webp",
+photo7: "images/items/item3/item3-6.webp",
+heading: "Подсумок-ключница",
+heading2: "Подсумок-ключница плоского профиля с креплением Molle",
+text: "TV-103-ATFGN-B2",
+price: "15 BYN / 15 804 RUB",
+color: "Олива",
+description: "Отличное решение для задействования боковых ячеек Molle на рюкзаках. Внутри петля для крепления ключей, небольшого фонарика/ мультитула и.т.п. В наличии расцветки: олива, мох, мультикам, койот, хаки, партизан (сс-лето), цифра, вудланд.",
 },
 ]
 
@@ -203,37 +282,17 @@ color: "Олива",
 
 let items9 = [
   {
-id: "catalog__item11",
-number: "11",
-photo1: "images/item1.png",
-photo2: "images/items/item1-1.jpg",
-photo3: "images/items/item1-3.jpg",
-photo4: "images/items/item1-3.jpg",
-heading: "Чехол5 под бронежилет 6094 TV-103",
-text: "TV-103-ATFGN-B1",
-price: "200 BYN / 15 804 RUB",
-color: "Олива",
-},
-{
-id: "catalog__item12",
-number: "12",
-photo1: "images/items/item1-1.jpg",
-photo2: "images/items/item1-3.jpg",
-photo3: "images/item1.png",
-photo4: "images/items/item1-1.jpg",
-heading: "Чехол6 под бронежилет 6094 TV-103",
-text: "TV-103-ATFGN-B2",
-price: "200 BYN / 15 804 RUB",
-color: "Олива",
-},
-{
 id: "catalog__item13",
 number: "13",
-photo1: "images/items/item1-3.jpg",
-photo2: "images/items/item1-1.jpg",
-photo3: "images/item1.png",
-heading: "Чехол7 под бронежилет 6094 TV-103",
-text: "TV-103-ATFGN-B3",
+photo1: "images/items/item13/item13-1.webp",
+photo2: "images/items/item13/item13-2.webp",
+photo3: "images/items/item13/item13-3.webp",
+photo4: "images/items/item13/item13-4.webp",
+photo5: "images/items/item13/item13-5.webp",
+photo6: "images/items/item13/item13-6.webp",
+photo7: "images/items/item13/item13-7.webp",
+heading: "Чехол5 под бронежилет 6094 TV-103",
+text: "TV-103-ATFGN-B1",
 price: "200 BYN / 15 804 RUB",
 color: "Олива",
 },
@@ -280,7 +339,9 @@ function renderCatalog(items, containerId) {
 
 renderCatalog(items1, "catalogItems1");
 renderCatalog(items2, "catalogItems2");
+renderCatalog(items6, "catalogItems6");
 renderCatalog(items7, "catalogItems7");
+renderCatalog(items9, "catalogItems9");
 
 
 
@@ -416,7 +477,7 @@ if (!isMobile()) {
 }
 
 // Использование (для каждой карточки):
-const products = [...items1, ...items2,...items7];
+const products = [...items1, ...items2, ...items6, ...items7, ...items9];
 document.querySelectorAll(".catalog__item").forEach(card => {
   const productId = card.id;
   const product = products.find(p => p.id === productId);
@@ -477,18 +538,18 @@ nextButton.addEventListener('click', () => {
 });
 
 function openModal(itemId) {
-  const product = [...items1, ...items2, ...items7].find(item => item.id === itemId);
+  const product = [...items1, ...items2, ...items6, ...items7, ...items9].find(item => item.id === itemId);
   if (product) {
     currentSlide = 0;
 
-    modalHeading.textContent = product.heading;
+    modalHeading.textContent = product.heading2;
     modalText.textContent = product.text;
     modalColor.textContent = product.color;
     modalPrice.textContent = product.price;
     modalDescription.textContent = product.description || 'Нет описания';
 
     // === 🔥 САМЫЕ ГЛАВНЫЕ ИЗМЕНЕНИЯ: динамическое создание фото и индикаторов ===
-    const photos = [product.photo1, product.photo2, product.photo3, product.photo4, product.photo5, product.photo6, product.photo7].filter(Boolean);
+    const photos = [product.photo1, product.photo2, product.photo3, product.photo4, product.photo5, product.photo6, product.photo7, product.photo8, product.photo9, product.photo10].filter(Boolean);
 
     // Очищаем и создаём слайды
     modalSlider.innerHTML = '';
