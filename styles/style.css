@@ -394,7 +394,7 @@ section {
     z-index: 2000; 
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.7);
 }
 
 #modal {
@@ -576,6 +576,41 @@ section {
   
 .modal-indicator.active {
     background-color: #000000;
+}
+
+/* zoom modal */
+
+/* При зуме делаем фон ещё темнее */
+#modal.zoomed {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Слайд — div с фоном */
+.modal-slide {
+  width: 100%;
+  height: 500px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: none;
+  cursor: zoom-in;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+  position: relative;
+}
+
+/* Активный слайд */
+.modal-slide.active {
+  display: block;
+}
+
+/* Зум — масштаб и прокрутка */
+.modal-slide.zoomed {
+  cursor: zoom-out;
+  overflow: auto; /* чтобы можно было скроллить */
+  transform-origin: center center; /* по умолчанию центр */
+  transform: scale(1.7);
+  transition: transform 0.5s ease, background-position 0.2s ease;
 }
   
 /* slider 2 */
@@ -1552,6 +1587,11 @@ footer .container {
         width: 14px; /* Ширина стрелки */
         height: 14px; /* Высота стрелки */
     }
+
+    .modal-slider {
+    width: 80%;
+    }
+
 }
 
 
@@ -1805,6 +1845,10 @@ footer .container {
     font-size: 36px;
     line-height: 36px;
     }
+
+    .modal-slider {
+    width: 90%;
+    }
 }
 
 
@@ -1888,6 +1932,10 @@ footer .container {
         width: 18px; /* Ширина стрелки */
         height: 18px; /* Высота стрелки */
     }
+
+    .modal-slider {
+        width: 100%;
+        }
 }
 
 
