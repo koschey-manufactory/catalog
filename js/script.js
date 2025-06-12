@@ -552,93 +552,14 @@ function openModal(itemId) {
     const photos = [product.photo1, product.photo2, product.photo3, product.photo4, product.photo5, product.photo6, product.photo7, product.photo8, product.photo9, product.photo10].filter(Boolean);
 
     // Очищаем и создаём слайды
- // === ВСТАВКА НАЧАЛО ===
-    modalSlider.innerHTML = ''; // очистка слайдера
-
+    modalSlider.innerHTML = '';
     photos.forEach((photo, i) => {
-  const slide = document.createElement('div');
-  slide.className = 'modal-slide';
-  if (i === 0) slide.classList.add('active');
-  slide.style.backgroundImage = `url('${photo}')`;
-  slide.style.cursor = "zoom-in";
-
-  // Для хранения текущего зума
-  let zoomed = false;
-
-  // Создаем лупу — увеличенный слой
-  const zoomLayer = document.createElement('div');
-  zoomLayer.style.position = 'absolute';
-  zoomLayer.style.top = '0';
-  zoomLayer.style.left = '0';
-  zoomLayer.style.width = '100%';
-  zoomLayer.style.height = '100%';
-  zoomLayer.style.backgroundImage = `url('${photo}')`;
-  zoomLayer.style.backgroundRepeat = 'no-repeat';
-  zoomLayer.style.backgroundSize = '170%';  // масштаб 2x
-  zoomLayer.style.pointerEvents = 'none'; // чтобы не мешал мыши
-  zoomLayer.style.display = 'none';
-  slide.style.position = 'relative';
-  slide.appendChild(zoomLayer);
-
-  slide.addEventListener("click", (e) => {
-    zoomed = !zoomed;
-    if (zoomed) {
-      modal.classList.add("zoomed");
-      zoomLayer.style.display = 'block';
-      slide.style.cursor = "zoom-out";
-    } else {
-      modal.classList.remove("zoomed");
-      zoomLayer.style.display = 'none';
-      slide.style.cursor = "zoom-in";
-    }
-  });
-
-  slide.addEventListener("mousemove", (e) => {
-    if (!zoomed) return;
-    const rect = slide.getBoundingClientRect();
-
-    // Координаты мыши внутри слайда
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    // Проценты позиции мыши внутри слайда
-    const xPercent = (x / rect.width) * 100;
-    const yPercent = (y / rect.height) * 100;
-
-    // Сдвигаем фон лупы, чтобы центр был под курсором
-    zoomLayer.style.backgroundPosition = `${xPercent}% ${yPercent}%`;
-  });
-
- let isDragging = false;
-  let dragStartX = 0;
-  let dragStartY = 0;
-  let scrollStartLeft = 0;
-  let scrollStartTop = 0;
-
-  slide.addEventListener("touchstart", (e) => {
-    if (!zoomed) return;
-    isDragging = true;
-    dragStartX = e.touches[0].clientX;
-    dragStartY = e.touches[0].clientY;
-    scrollStartLeft = slide.scrollLeft;
-    scrollStartTop = slide.scrollTop;
-  });
-
-  slide.addEventListener("touchmove", (e) => {
-    if (!zoomed || !isDragging) return;
-    const dx = dragStartX - e.touches[0].clientX;
-    const dy = dragStartY - e.touches[0].clientY;
-    slide.scrollLeft = scrollStartLeft + dx;
-    slide.scrollTop = scrollStartTop + dy;
-  });
-
-  slide.addEventListener("touchend", () => {
-    isDragging = false;
-  });
-
-
-  modalSlider.appendChild(slide);
-});
+      const slide = document.createElement('img');
+      slide.src = photo;
+      slide.className = 'modal-slide';
+      if (i === 0) slide.classList.add('active');
+      modalSlider.appendChild(slide);
+    });
 
     // Очищаем и создаём индикаторы
     modalIndicators.innerHTML = '';
@@ -732,6 +653,3 @@ modalSlider.addEventListener("touchend", (e) => {
   endX = e.changedTouches[0].clientX;
   handleSwipe();
 });
-
-
-// zoom
