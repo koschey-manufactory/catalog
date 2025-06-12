@@ -507,6 +507,7 @@ const modalIndicators = document.querySelector('.modal-indicators');
 const prevButton = document.querySelector('.modal-prev');
 const nextButton = document.querySelector('.modal-next');
 let currentSlide = 0;
+const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
 
 
@@ -552,14 +553,67 @@ function openModal(itemId) {
     const photos = [product.photo1, product.photo2, product.photo3, product.photo4, product.photo5, product.photo6, product.photo7, product.photo8, product.photo9, product.photo10].filter(Boolean);
 
     // Очищаем и создаём слайды
-    modalSlider.innerHTML = '';
+ // === ВСТАВКА НАЧАЛО ===
+    modalSlider.innerHTML = ''; // очистка слайдера
+
     photos.forEach((photo, i) => {
-      const slide = document.createElement('img');
-      slide.src = photo;
-      slide.className = 'modal-slide';
-      if (i === 0) slide.classList.add('active');
-      modalSlider.appendChild(slide);
-    });
+  const slide = document.createElement('div');
+  slide.className = 'modal-slide';
+  if (i === 0) slide.classList.add('active');
+  slide.style.backgroundImage = `url('${photo}')`;
+  slide.style.cursor = "zoom-in";
+
+  // Для хранения текущего зума
+  let zoomed = false;
+
+  // Создаем лупу — увеличенный слой
+  const zoomLayer = document.createElement('div');
+  zoomLayer.style.position = 'absolute';
+  zoomLayer.style.top = '0';
+  zoomLayer.style.left = '0';
+  zoomLayer.style.width = '100%';
+  zoomLayer.style.height = '100%';
+  zoomLayer.style.backgroundImage = `url('${photo}')`;
+  zoomLayer.style.backgroundRepeat = 'no-repeat';
+  zoomLayer.style.backgroundSize = '160%';  // масштаб 2x
+  zoomLayer.style.pointerEvents = 'none'; // чтобы не мешал мыши
+  zoomLayer.style.display = 'none';
+  slide.style.position = 'relative';
+  slide.appendChild(zoomLayer);
+
+if (!isTouchDevice) {
+  slide.addEventListener("click", (e) => {
+    zoomed = !zoomed;
+    if (zoomed) {
+      modal.classList.add("zoomed");
+      zoomLayer.style.display = 'block';
+      slide.style.cursor = "zoom-out";
+    } else {
+      modal.classList.remove("zoomed");
+      zoomLayer.style.display = 'none';
+      slide.style.cursor = "zoom-in";
+    }
+  });
+
+  slide.addEventListener("mousemove", (e) => {
+    if (!zoomed) return;
+    const rect = slide.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const xPercent = (x / rect.width) * 100;
+    const yPercent = (y / rect.height) * 100;
+
+    zoomLayer.style.backgroundPosition = `${xPercent}% ${yPercent}%`;
+  });
+}
+
+
+
+
+  modalSlider.appendChild(slide);
+});
 
     // Очищаем и создаём индикаторы
     modalIndicators.innerHTML = '';
@@ -653,3 +707,6 @@ modalSlider.addEventListener("touchend", (e) => {
   endX = e.changedTouches[0].clientX;
   handleSwipe();
 });
+
+
+// zoom
