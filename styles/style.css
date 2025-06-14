@@ -1785,9 +1785,23 @@ footer .container {
         font-size: 16px;
     }
 
-
     .modal-content {
         padding: 30px;
+    }
+
+    .modal-prev, .modal-next {
+        display: none;
+        padding: 0;
+    }
+
+    .modal-prev img, .modal-next img {
+        width: 1px; /* Ширина стрелки */
+        height: 1px; /* Высота стрелки */
+        transition: transform 0.3s ease;
+    }
+
+     .modal-content {
+        width: 90%;
     }
 }
 
