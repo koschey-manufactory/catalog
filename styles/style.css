@@ -580,37 +580,22 @@ section {
 
 /* zoom modal */
 
-/* При зуме делаем фон ещё темнее */
-#modal.zoomed {
-  background: rgba(0, 0, 0, 0.8);
-}
-
-/* Слайд — div с фоном */
 .modal-slide {
-  width: 100%;
-  height: 500px;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: none;
+  transition: transform 0.3s ease;
+}
+
+@media (min-width: 1024px) {
+.modal-slide {
+  transition: transform 0.2s ease, transform-origin 0s;
   cursor: zoom-in;
-  overflow: hidden;
-  transition: transform 0.4s ease;
-  position: relative;
+transform-origin: center center;
 }
 
-/* Активный слайд */
-.modal-slide.active {
-  display: block;
-}
-
-/* Зум — масштаб и прокрутка */
 .modal-slide.zoomed {
+  transform: scale(1.5); /* уровень зума */
+   transform-origin: center center;
   cursor: zoom-out;
-  overflow: auto; /* чтобы можно было скроллить */
-  transform-origin: center center; /* по умолчанию центр */
-  transform: scale(1.7);
-  transition: transform 0.5s ease, background-position 0.2s ease;
+}
 }
   
 /* slider 2 */
