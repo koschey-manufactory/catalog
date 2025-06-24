@@ -557,6 +557,37 @@ function openModal(itemId) {
       const slide = document.createElement('img');
       slide.src = photo;
       slide.className = 'modal-slide';
+if (window.innerWidth >= 1024) {
+
+  slide.addEventListener('mousemove', (e) => {
+    const bounds = e.target.getBoundingClientRect();
+    const x = ((e.clientX - bounds.left) / bounds.width) * 100;
+    const y = ((e.clientY - bounds.top) / bounds.height) * 100;
+    e.target.style.transformOrigin = `${x}% ${y}%`;
+  });
+
+  slide.addEventListener('mouseleave', (e) => {
+    e.target.style.transformOrigin = 'center center';
+  });
+
+  slide.addEventListener('click', (e) => {
+  if (slide.classList.contains('zoomed')) {
+    slide.classList.remove('zoomed');
+    slide.style.transformOrigin = 'center center';
+  } else {
+    slide.classList.add('zoomed');
+  }
+});
+
+slide.addEventListener('mousemove', (e) => {
+  if (!slide.classList.contains('zoomed')) return;
+
+  const bounds = e.target.getBoundingClientRect();
+  const x = ((e.clientX - bounds.left) / bounds.width) * 100;
+  const y = ((e.clientY - bounds.top) / bounds.height) * 100;
+  e.target.style.transformOrigin = `${x}% ${y}%`;
+});
+}
       if (i === 0) slide.classList.add('active');
       modalSlider.appendChild(slide);
     });
@@ -594,31 +625,6 @@ document.addEventListener("click", (e) => {
     openModal(e.target.dataset.id);
   }
 });
-
-// let autoSlideInterval;
-
-
-// function startSlide() {
-//   autoSlideInterval = setInterval(() => {
-//     currentSlide++;
-//     showSlide(currentSlide);
-//   }, 2000); 
-// }
-
-// function stopSlide() {
-//   clearInterval(autoSlideInterval);
-// }
-
-// modalSlider.addEventListener('mouseenter', startSlide);
-// modalSlider.addEventListener('mouseleave', stopSlide);
-
-
-
-// modalSliderWrapper.addEventListener('touchstart', (e) => {
-//   if (e.touches.length > 1) {
-//     stopSlide(); // если два и более пальца — это зум, останавливаем автослайдер
-//   }
-// });
 
 
 let startX = 0;
