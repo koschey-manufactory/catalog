@@ -1,0 +1,525 @@
+/* modal  */
+
+.modal {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 2000; 
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+
+#modal {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  transform: scale(0.96);
+}
+
+#modal.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: scale(1);
+}
+
+.modal-content {
+    position: relative;
+    width: 80%;
+    max-height: 90vh;
+    margin: 7% auto 5%;
+    padding: 35px;
+    background-color: #edeeef;
+    border: 6px solid #78866b;
+    border-radius: 10px;
+    overflow-y: auto;
+}
+
+.close {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    color: #aaa;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modal-heading {
+    margin-bottom: 30px;
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-size: 36px;
+}
+
+.modal-content p {
+    margin-bottom: 25px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #78866b;
+}
+
+#modal-text, #modal-price, #modal-color, #modal-description {
+    font-weight: 400;
+    color: #000000;
+}
+
+.modal_gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.modal-content span {
+    font-weight: 700;
+}
+
+/* modal slider  */
+
+.modal .modal-slider {
+    overflow: hidden; 
+}
+
+.modal-content {
+    border: 5px solid #444d3c;
+}
+  
+.modal .modal-slide {
+    display: none;
+    width: 100%;
+    transition: opacity 0.5s ease-in-out;
+}
+  
+.modal .active {
+    display: block;
+}
+
+.modal-slide {
+    cursor: pointer;
+}
+
+/* Стили слайдера */
+  
+.modal-slider-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal_item {
+    padding: 20px 0;
+}
+  
+.modal-slider {
+    display: flex;
+     width: 70%;
+    overflow: hidden;
+}
+  
+.modal-slide {
+    display: none;
+    width: 100%;
+    height: auto;
+    max-height: 550px;
+    transition: opacity 0.5s ease-in-out;
+}
+  
+.modal-slide.active {
+    display: block;
+}
+  
+.modal-prev, .modal-next {
+    padding: 20px;
+    background: none;
+    border: none;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.modal-prev img, .modal-next img {
+    width: 20px; /* Ширина стрелки */
+    height: 20px; /* Высота стрелки */
+    transition: transform 0.3s ease;
+}
+  
+.modal-prev {
+    left: 10px;
+}
+  
+.modal-next {
+    right: 10px;
+}
+
+.modal-prev:hover {
+    color: rgb(4, 57, 4);
+}
+
+.modal-next:hover {
+    color: rgb(4, 57, 4);
+    transform: scale(1.1);
+}
+
+.modal-indicators {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+  
+.modal-indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #78866b;
+    border-radius: 50%;
+    cursor: pointer;
+}
+  
+.modal-indicator.active {
+    background-color: #000000;
+}
+
+.modal-color-options {
+    display: flex;
+    justify-content: flex-start;
+    gap: 6px;
+    width: 100%;
+    margin-top: -5px;
+    margin-bottom: 18px;
+}
+
+.modal-color-options span {
+  width: 30px;
+  height: 30px;
+  border-radius: 30%;
+}
+
+/* zoom modal */
+
+.modal-slide {
+  transition: transform 0.3s ease;
+}
+
+@media (min-width: 1024px) {
+.modal-slide {
+  transition: transform 0.2s ease, transform-origin 0s;
+  cursor: zoom-in;
+transform-origin: center center;
+}
+
+.modal-slide.zoomed {
+  transform: scale(1.5); /* уровень зума */
+   transform-origin: center center;
+  cursor: zoom-out;
+}
+}
+
+/* colors */
+
+.color-options {
+  display: flex;
+  gap: 8px;
+  margin: 0 0 20px;
+  justify-content: center;
+}
+
+
+
+.color-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 30%; /* лёгкие скругления углов, можно 0 для полностью квадратных */
+  display: inline-block;
+  margin: 4px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+
+.color-circle.active {
+  border: 1px solid #333;
+  box-shadow: 0 0 0 2px rgba(100, 100, 100, 0.5);
+  transform: scale(1.1);
+}
+
+.color-circle::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%) translateY(5px);
+  background: #fff;
+  color: #3b3b2f; /* мягкий хаки-текст */
+  font-size: 14px;
+  font-family: "Merriweather", sans-serif;
+  line-height: 16px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border: 1px solid #7b8c59; /* хаки-обводка */
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 10;
+}
+
+.color-circle:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+  
+/* slider 2 */
+
+.slider-controls {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; 
+}
+
+.images {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 372px; /* Задайте нужный размер */
+    height: 372px;
+    overflow: hidden;
+}
+
+.item-photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider-button {
+    z-index: 10;
+    background: none;
+    border: none;
+    transition: transform 0.3s ease;  
+    cursor: pointer;
+}
+
+.slider-button img {
+    width: 20px; /* Ширина стрелки */
+    height: 20px; /* Высота стрелки */
+    transition: transform 0.3s ease;
+}
+
+.slider-button:hover img {
+    transform: scale(1.1); /* Увеличиваем стрелку при наведении */
+}
+
+.slider-button:hover {
+    color: rgb(4, 57, 4);
+}
+
+.indicators {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    background: #78866b;
+    border-radius: 50%;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.indicator.active {
+    background: #000000;
+}
+
+/* Эффект при наведении на индикатор */
+
+.indicator:hover {
+    background: #000000;
+}
+
+/* price  */
+
+#price {
+    background-color: #000000;
+    border-bottom: 2px solid #78866b;
+}
+
+#price .container {
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+
+.price__blocks {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 25px;
+}
+
+.price__block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    padding: 40px; 
+    width: 100%;
+    height: auto;
+    border: 3px solid #78866b;
+}
+
+.price__headline {
+    height: 92px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    line-height: 32px;
+    text-align: center;
+    align-content: center;
+    color: #ffffff;
+}
+
+.price__cost {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    line-height: 48px;
+    color: #78866b;
+}
+
+.price__list {
+    width: 95%;
+    height: auto;
+    height: max-content;
+    margin-bottom: 40px;
+    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    line-height: 28px;
+    text-align: center;
+    color: #ffffff; 
+}
+
+.price__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 58px;
+    color: #000000;
+    background-color: #78866b;
+    font-size: 22px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    border: 0px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.price__button:hover {
+    color: #ffffff;
+}
+
+/* skills  */
+
+ #skills {
+    background-color: #000000;
+}
+
+ #skills .container {
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+
+ .skills__items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 40px;
+    margin-top: 100px;
+    color: #ffffff;
+}
+
+.skills__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 36px;
+}
+
+.skills__item img {
+    margin-bottom: 52px;
+}
+
+.skills__item h3 {
+    height: auto;
+    margin-bottom: 23px;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    text-align: center;
+}
+
+ .skills__item p {
+    width: 280px;
+    font-size: 18px;
+    line-height: 22px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    text-align: center; 
+}
+
+/* about */
+
+#about {
+    background-color: #78866b;
+}
+
+#about .container {
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+
+.about__content p {
+    width: 100%;
+    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    text-align: center; 
+    line-height: 30px;
+}
+
+#about .section-title-heading {
+    color: #000000;
+}
+
+#about .section-title-line {
+    background-color: #000000;
+}

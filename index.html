@@ -1,1 +1,342 @@
-
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koschey Manufactory</title>
+    <meta name="description" content="Мануфактура Кощей | Военное снаряжение Беларусь">
+     <!-- Styles -->
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
+     <!-- Icon -->
+    <link href="images/koschey-logo.ico" rel="icon">
+</head>
+<body>
+<header class="header">
+    <nav class="header__menu">
+        <div class="container">
+            <div class="logo">
+            </div>
+            <div class="menu__burger">
+                <div class="menu__btn" onclick="burgerMenu()" id="menuButton">
+                    <span id="burgerMenu1"></span>
+                    <span id="burgerMenu2"></span>
+                    <span id="burgerMenu3"></span>
+                </div>
+                <div class="menu__block">
+                    <div class="menu__box closed" id="menu" onclick="closeMenu()">
+                        <div>
+                            <ul class="header__list">
+                                <li><a href="#main" class="header__link">Главная</a></li>
+                                <li><a href="#catalog1" class="header__link">Каталог</a></li>
+                                <li><a href="#" class="header__link">Новости</a></li>
+                                <li><a href="#about" class="header__link">О нас</a></li>
+                                <li><a href="#contacts" class="header__link">Контакты</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="header__lang"><span>BYN &nbsp;</span>/&nbsp; RUB</div>
+                    <div class="header__cart">
+                        <a href="cart.html" class="cart-link">
+                          <svg width="36.3" height="25" viewBox="0 0 871 599" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M870.064 86.0303C869.507 71.489 857.552 59.8714 842.875 59.8714H306.912C291.884 59.8714 279.702 72.0562 279.702 87.0827V92.5255C279.702 107.557 291.884 119.74 306.912 119.74H799.609L752.112 300.795L285.785 336.678L186.719 27.2198V27.2161C186.719 12.1848 174.535 0 159.505 0H27.2149C12.1836 0 0 12.1848 0 27.2161V32.6589C0 47.6854 12.1824 59.8726 27.2149 59.8726H132.165L253.056 437.497C231.572 453.905 217.712 479.784 217.712 508.899C217.712 558.496 257.922 598.705 307.52 598.705H313.868C363.466 598.705 403.676 558.496 403.676 508.899C403.676 498.404 401.866 488.329 398.557 478.965H626.502C623.193 488.329 621.384 498.405 621.384 508.899C621.384 558.496 661.592 598.705 711.19 598.705H718.296C767.897 598.705 808.106 558.496 808.106 508.899C808.106 459.303 767.897 419.094 718.296 419.094H718.145H711.19H313.863H312.168L304.547 395.292L771.706 359.344C786.176 361.503 800.646 353.532 805.71 339.744L806.305 337.478C806.542 336.707 806.745 335.926 806.916 335.137L867.554 104.002C868.9 101.109 869.752 97.9357 870.002 94.5966C870.459 91.7139 870.464 88.8336 870.064 86.0303ZM713.308 478.964H715.425C731.957 478.964 745.359 492.37 745.359 508.902C745.359 525.435 731.957 538.836 715.425 538.836H713.308C696.776 538.836 683.371 525.435 683.371 508.902C683.371 492.37 696.776 478.964 713.308 478.964ZM311.748 478.964C328.284 478.964 341.687 492.37 341.687 508.902C341.687 525.435 328.284 538.836 311.748 538.836H309.636C293.104 538.836 279.698 525.435 279.698 508.902C279.698 492.37 293.104 478.964 309.636 478.964H311.748Z" fill="white"/>
+                          </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="header__info">
+        <div class="container">
+            <h1 id="main">Мануфактура Кощей | Военное снаряжение</h1>
+            <p class="header__text">Кощей - это независимый отечественный производитель снаряжения военного назначения.
+                Наша команда - это сообщество мастеров-ремесленников, знакомых с оружием и ратным делом, объединившихся с целью создания качественного и доступного армейского снаряжения.
+                Наши изделия - это накопленный опыт, надёжные решения и испытанные материалы.</p>
+            <div class="header__button"><a href="https://t.me/koschey_manufactory" target="_blank">Заказать через Telegram</a></div>
+        </div>
+    </div>
+</header>
+<main>
+<section id="catalog1" class="section-catalog section hidden">
+    <div class="container"> 
+        <div class="catalog-container">
+            <div class="catalog-switcher"></div>
+            <div class="catalog-section-title">
+                <div class="section-title-line"></div>
+                <h2 class="section-title-text">Бронежилеты</h2>
+                <div class="section-title-line"></div>
+            </div>
+        </div>
+        <div class="catalog_items" id="catalogItems1" style="background-image: url();">
+        </div>
+    </div> 
+</section>
+<section id="catalog2" class="section-catalog section hidden">
+    <div class="container"> 
+        <div class="catalog-container">
+            <div class="catalog-switcher"></div>
+            <div class="catalog-section-title">
+                <div class="section-title-line"></div>
+                <h2 class="section-title-text">Модули / Аксессуары для БЖ</h2>
+                <div class="section-title-line"></div>
+            </div>
+        </div>
+        <div class="catalog_items" id="catalogItems2" style="background-image: url();">
+        </div>
+    </div> 
+</section>
+<section id="catalog3" class="section-catalog section hidden">
+    <div class="container"> 
+        <div class="catalog-container">
+            <div class="catalog-switcher"></div>
+            <div class="catalog-section-title">
+                <div class="section-title-line"></div>
+                <h2 class="section-title-text">Пояса / Ремни</h2>
+                <div class="section-title-line"></div>
+            </div>
+        </div>
+        <div class="catalog_items" id="catalogItems3" style="background-image: url();">
+        </div>
+    </div> 
+</section>
+<section id="catalog4" class="section-catalog section hidden">
+    <div class="container"> 
+        <div class="catalog-container">
+            <div class="catalog-switcher"></div>
+            <div class="catalog-section-title">
+                <div class="section-title-line"></div>
+                <h2 class="section-title-text">Разгрузочные системы</h2>
+                <div class="section-title-line"></div>
+            </div>
+        </div>
+        <div class="catalog_items" id="catalogItems4" style="background-image: url();">
+        </div>
+    </div> 
+</section>
+<section id="catalog5" class="section-catalog section hidden">
+    <div class="container"> 
+        <div class="catalog-container">
+            <div class="catalog-switcher"></div>
+            <div class="catalog-section-title">
+                <div class="section-title-line"></div>
+                <h2 class="section-title-text">Подсумки для боекомплекта</h2>
+                <div class="section-title-line"></div>
+            </div>
+        </div>
+        <div class="catalog_items" id="catalogItems5" style="background-image: url();">
+        </div>
+    </div> 
+</section>
+<section id="catalog6" class="section-catalog section hidden">
+    <div class="container"> 
+        <div class="catalog-container">
+            <div class="catalog-switcher"></div>
+            <div class="catalog-section-title">
+                <div class="section-title-line"></div>
+                <h2 class="section-title-text">Медицинские подсумки</h2>
+                <div class="section-title-line"></div>
+            </div>
+        </div>
+        <div class="catalog_items" id="catalogItems6" style="background-image: url();">
+        </div>
+    </div> 
+</section>
+<section id="catalog7" class="section-catalog section hidden">
+    <div class="container"> 
+        <div class="catalog-container">
+            <div class="catalog-switcher"></div>
+            <div class="catalog-section-title">
+                <div class="section-title-line"></div>
+                <h2 class="section-title-text">Утилитарные подсумки</h2>
+                <div class="section-title-line"></div>
+            </div>
+        </div>
+        <div class="catalog_items" id="catalogItems7" style="background-image: url();">
+        </div>
+    </div> 
+</section>
+<section id="catalog8" class="section-catalog section hidden">
+    <div class="container"> 
+        <div class="catalog-container">
+            <div class="catalog-switcher"></div>
+            <div class="catalog-section-title">
+                <div class="section-title-line"></div>
+                <h2 class="section-title-text">Подсумки для радиостанций</h2>
+                <div class="section-title-line"></div>
+            </div>
+        </div>
+        <div class="catalog_items" id="catalogItems8" style="background-image: url();">
+        </div>
+    </div> 
+</section>
+<section id="catalog9" class="section-catalog section hidden">
+    <div class="container"> 
+        <div class="catalog-container">
+            <div class="catalog-switcher"></div>
+            <div class="catalog-section-title">
+                <div class="section-title-line"></div>
+                <h2 class="section-title-text">Прочие подсумки</h2>
+                <div class="section-title-line"></div>
+            </div>
+        </div>
+        <div class="catalog_items" id="catalogItems9" style="background-image: url();">
+        </div>
+    </div> 
+</section>
+<section id="catalog10" class="section-catalog section hidden">
+    <div class="container"> 
+        <div class="catalog-container">
+            <div class="catalog-switcher"></div>
+            <div class="catalog-section-title">
+                <div class="section-title-line"></div>
+                <h2 class="section-title-text">Рюкзаки</h2>
+                <div class="section-title-line"></div>
+            </div>
+        </div>
+        <div class="catalog_items" id="catalogItems10" style="background-image: url();">
+        </div>
+    </div> 
+</section>
+<div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="modal-heading">1</h2>
+      <div class="modal_gallery">
+            <div>
+                <div class="modal-slider-wrapper">
+                    <button class="modal-prev"><img src="images/icons/prev-arrow-active.svg" alt="Prev"></button>
+                    <div class="modal-slider">
+                        <!-- <img class="modal-slide" id="modal-photo1" src="images/items/item1-1.jpg" alt="Фото 1" style="max-width: 100%;">
+                        <img class="modal-slide" id="modal-photo2" src="images/items/item1-2.jpg" alt="Фото 2" style="max-width: 100%;">
+                        <img class="modal-slide" id="modal-photo3" src="images/items/item1-3.jpg" alt="Фото 3" style="max-width: 100%;"> -->
+                    </div>
+                    <button class="modal-next"><img src="images/icons/next-arrow-active.svg" alt="Next"></button>
+                </div>
+                <div class="modal-indicators">
+                    <!-- <span class="modal-indicator"></span>
+                    <span class="modal-indicator"></span>
+                    <span class="modal-indicator"></span> -->
+              </div>
+            </div>
+            <div class=modal_item>
+            <p>Артикул: <span id="modal-text"></span></p>
+            <p class="modal__color">Цвет: <span id="modal-color"></span></p>
+            <div class="modal-color-options"></div>
+            <p>Стоимость: <span id="modal-price"></span></p>
+            <p>Описание: <span id="modal-description"></span></p>
+            </div>
+        </div>
+    </div>
+</div>
+<section id="price">
+    <div class="container">
+        <div class="section-title">
+            <div class="section-title-line"></div>
+            <h2 class="section-title-heading">Услуги</h2>
+            <div class="section-title-line"></div>
+        </div>
+        <div class="price__blocks">
+            <div class="price__block">
+                <div class="price__headline">Индивидуальный пошив</div>
+                <div class="price__cost">Под заказ</div>
+                <div class="price__list">
+                    <p>Принимаем заказы на индивидуальный пошив военного снаряжения на основе ваших пожеланий, эскизов, фотографий и так далее. При заказе больших партий предоставляем скидку.</p>
+                </div>
+                <button class="price__button">Заказать</button>
+            </div>
+            <div class="price__block">
+                <div class="price__headline">Раскройка баллистических пакетов</div>
+                <div class="price__cost">Под заказ</div>
+                <div class="price__list">
+                    <p>Производим раскройку ваших баллистических пакетов под нужные размеры из арамида и СВМПЭ.</p>
+                </div>
+                <button class="price__button">Заказать</button>
+            </div>
+            <div class="price__block">
+                <div class="price__headline">Ремонт снаряжения</div>
+                <div class="price__cost">Под заказ</div>
+                <div class="price__list">
+                    <p>Производим качественный ремонт военного снаряжения, рюкзаков, бронежилетов, подсумков, разгрузок и так далее. Каждый случай обсуждается индивидуально с заказчиком.</p>
+                </div>
+                <button class="price__button">Заказать</button>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="skills">
+    <div class="container">
+        <div class="section-title">
+            <div class="section-title-line"></div>
+            <h2 class="section-title-heading">Наши принципы</h2>
+            <div class="section-title-line"></div>
+        </div>
+        <div class="skills__items">
+            <div class="skills__item">
+                <img src="images/skill-icon1.svg" alt="">
+                <h3>Cобственное производство</h3>
+                <p>Мастера с большим опытом производства военного снаряжения.</p>
+            </div>
+            <div class="skills__item">
+                <img src="images/skill-icon2.svg" alt="">
+                <h3>Контроль качества</h3>
+                <p>Каждое изделие проходит тщательный технический контроль.</p>
+            </div>
+            <div class="skills__item">
+                <img src="images/skill-icon3.svg" alt="">
+                <h3>Уникальность материалов</h3>
+                <p>Используем только проверенные в полевых условиях материалы.</p>
+            </div>
+            <div class="skills__item">
+                <img src="images/skill-icon4.svg" alt="">
+                <h3>Система скидок</h3>
+                <p>Постоянным клиентам предоставляются скидки.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="about">
+    <div class="container">
+        <div class="section-title">
+            <div class="section-title-line"></div>
+            <h2 class="section-title-heading">Как сделать заказ</h2>
+            <div class="section-title-line"></div>
+        </div>
+        <div class="about__content">
+            <p>Заказы принимаются через наш Телеграм аккаунт или группу ВКонтакте. При оформлении заказа проверяется, есть ли товар в наличии, или рассматривается вариант его производства под заказ. Оплата и доставка обсуждаются индивидуально с заказчиком. Наша компания осуществляет отправку заказов по Республике Беларусь и Российской Федерации. Возможна доставка через Европочту или СДЭК. Убедитесь в комплектности и надлежащем виде заказа непосредственно при приемке товара. </p>
+        </div>
+    </div>
+</section>
+</main>
+<footer>
+    <div class="container">
+        <div class="footer__info">
+            <p>© 2025</p>
+            <p>Кощей Мануфактура</p>
+        </div>
+        <div class="footer__text">
+            <p>Информация</p>
+            <p><a href="#main">О компании</a></p>
+            <p><a href="#about">Как сделать заказ</a></p>
+            <p><a href="#about">Оплата и доставка</a></p>
+        </div>
+        <div id="contacts" class="footer__contacts">
+            <p>Контакты</p>
+            <p><a href="tel:+375255137085">+375-25-513-70-85</a></p>
+            <p><a href="mailto:koschey.manufactory@gmail.com">koschey.manufactory@gmail.com</a></p>
+        </div>
+        <div class="footer__logo">
+            <a href="https://www.instagram.com/koschey_manufactory?igsh=MXI5YmRnMGRoeXZ0bw==" target="_blank"><div></div></a>
+            <a href="https://vk.com/koshey_manufactory" target="_blank"><div></div></a>
+            <a href="https://t.me/koschey_manufactory" target="_blank"><div></div></a>
+            <a href="https://t.me/koschey_manufactory" target="_blank"><div></div></a>
+        </div>
+    </div>  
+</footer>
+<script src="js/script.js"></script>
+</body>
+</html> 
