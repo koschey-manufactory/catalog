@@ -177,7 +177,7 @@ function sendOrder() {
   `${item.name} — ${item.color} — ${item.text} — ${item.quantity} шт. — ${item.price}`
 ).join("\n");
 
-  emailjs.send("service_9ty8iwr", "service_9ty8iwr", {
+  emailjs.send("service_9ty8iwr", "template_s6fpn1n", {
     from_name: name,
     phone,
     email,
