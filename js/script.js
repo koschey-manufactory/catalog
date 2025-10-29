@@ -30,13 +30,13 @@ function closeMenu() {
 const colorsMap = {
   "Олива": { style: "background-color: #4b573e;" },
   "Черный": { style: "background-color: #000000;" },
-  "Мох": { style: "background-image: url('images/colors/moss.jpg'); background-size: cover; background-position: center;" },
+  "Мох": { style: "background-image: url('images/colors/moss.webp'); background-size: cover; background-position: center;" },
   "Койот": { style: "background-color: #A8825A;" },
   "Партизан": { style: "background-image: url('images/colors/partisan.webp'); background-size: cover; background-position: center;" },
-  "ЕМР": { style: "background-image: url('images/colors/emr.jpg'); background-size: cover; background-position: center;" },
-  "Вудланд": { style: "background-image: url('images/colors/woodland.png'); background-size: cover; background-position: center;" },
+  "ЕМР": { style: "background-image: url('images/colors/emr.webp'); background-size: cover; background-position: center;" },
+  "Вудланд": { style: "background-image: url('images/colors/woodland.webp'); background-size: cover; background-position: center;" },
   "Хаки": { style: "background-color: #78866b;" },
-  "Мультикам": { style: "background-image: url('images/colors/multicam.jpg'); background-size: cover; background-position: center;" }
+  "Мультикам": { style: "background-image: url('images/colors/multicam.webp'); background-size: cover; background-position: center;" }
 };
 
 function getColorStyle(name) {
