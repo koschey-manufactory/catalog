@@ -173,9 +173,11 @@ function sendOrder() {
   }
 
   const cart = getCart();
-  const message = cart.map(item => 
-  `${item.name} — ${item.color} — ${item.text} — ${item.quantity} шт. — ${item.price}`
+const message = cart.map(item => 
+  `${item.name} — ${item.color} — ${item.text} — ${item.quantity.toString()} шт. — ${item.price.toString()} BYN`
 ).join("\n");
+
+console.log("Отправляем:", { name, phone, email, message });
 
   emailjs.send("service_9ty8iwr", "template_s6fpn1n", {
     from_name: name,
@@ -183,6 +185,7 @@ function sendOrder() {
     email,
     message
   })
+  
   .then(() => {
     alert("Заказ успешно отправлен!");
     localStorage.removeItem("cart");
