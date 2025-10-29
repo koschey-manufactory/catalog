@@ -163,27 +163,35 @@ document.addEventListener("click", (e) => {
 
 // Отправка заказа через EmailJS
 function sendOrder() {
-  const name = document.getElementById("name").value.trim();
-  const phone = document.getElementById("phone").value.trim();
-  const email = document.getElementById("email").value.trim();
+  const name = String(document.getElementById("name").value.trim());
+  const phone = String(document.getElementById("phone").value.trim());
+  const email = String(document.getElementById("email").value.trim());
+
+
+  const cart = getCart();
 
   if (!name || !phone || !email) {
     alert("Пожалуйста, заполните все поля!");
     return;
   }
 
-  const cart = getCart();
-const message = cart.map(item => 
-  `${item.name} — ${item.color} — ${item.text} — ${item.quantity.toString()} шт. — ${item.price.toString()} BYN`
-).join("\n");
+  if (cart.length === 0) {
+      alert("Корзина пуста!");
+      return;
+    }
+
+  
+const message = cart.map(item =>
+      `${item.name} — ${item.color} — ${item.text} — ${String(item.quantity)} шт. — ${String(item.price)} BYN`
+    ).join("\n");
 
 console.log("Отправляем:", { name, phone, email, message });
 
-  emailjs.send("service_9ty8iwr", "template_s6fpn1n", {
+  emailjs.send("service_9ty8iwr", "template_rl44qq9", {
     from_name: name,
-    phone,
-    email,
-    message
+      phone: phone,
+      email: email,
+      message: message
   })
   
   .then(() => {
@@ -192,7 +200,10 @@ console.log("Отправляем:", { name, phone, email, message });
     renderCart();
     document.getElementById("checkoutForm").classList.add("hidden");
   })
-  .catch(() => alert("Ошибка при отправке заказа."));
+  .catch(err => {
+      console.error("Ошибка EmailJS:", err);
+      alert("Ошибка при отправке заказа. Проверьте консоль.");
+    });
 }
 
 renderCart();
