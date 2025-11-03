@@ -17,19 +17,12 @@
 </head>
 <body>
 <header class="header">
-    <nav class="header__menu">
         <div class="container">
             <div class="logo">
             </div>
-            <div class="menu__burger">
-                <div class="menu__btn" onclick="burgerMenu()" id="menuButton">
-                    <span id="burgerMenu1"></span>
-                    <span id="burgerMenu2"></span>
-                    <span id="burgerMenu3"></span>
-                </div>
+            <nav class="menu__burger">
                 <div class="menu__block">
-                    <div class="menu__box closed" id="menu" onclick="closeMenu()">
-                        <div>
+                    <div class="menu__box" id="menu">
                             <ul class="header__list">
                                 <li><a href="#main" class="header__link">Главная</a></li>
                                 <li><a href="#catalog1" class="header__link">Каталог</a></li>
@@ -37,7 +30,6 @@
                                 <li><a href="#about" class="header__link">О нас</a></li>
                                 <li><a href="#contacts" class="header__link">Контакты</a></li>
                             </ul>
-                        </div>
                     </div>
                     <div class="header__lang"><span>BYN &nbsp;</span>/&nbsp; RUB</div>
                     <div class="header__cart">
@@ -47,20 +39,25 @@
                           </svg>
                         </a>
                     </div>
+                    <div class="menu__btn" id="menuButton">
+                      <span></span>
+                     <span></span>
+                    </div>
                 </div>
-            </div>
+            </nav>
         </div>
-    </nav>
-    <div class="header__info">
+    </header>
+    <section id="hero" class="section hero">
+    <div class="hero__info">
         <div class="container">
             <h1 id="main">Мануфактура Кощей | Военное снаряжение</h1>
-            <p class="header__text">Кощей - это независимый отечественный производитель снаряжения военного назначения.
+            <p class="hero__text">Кощей - это независимый отечественный производитель снаряжения военного назначения.
                 Наша команда - это сообщество мастеров-ремесленников, знакомых с оружием и ратным делом, объединившихся с целью создания качественного и доступного армейского снаряжения.
                 Наши изделия - это накопленный опыт, надёжные решения и испытанные материалы.</p>
-            <div class="header__button"><a href="https://t.me/koschey_manufactory" target="_blank">Заказать через Telegram</a></div>
+            <div class="hero__button"><a href="https://t.me/koschey_manufactory" target="_blank">Заказать через Telegram</a></div>
         </div>
     </div>
-</header>
+    </section>
 <main>
 <section id="catalog1" class="section-catalog section hidden">
     <div class="container"> 

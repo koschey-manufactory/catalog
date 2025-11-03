@@ -27,14 +27,13 @@
             <div class="logo">
             </div>
             <div class="menu__burger">
-                <div class="menu__btn" onclick="burgerMenu()" id="menuButton">
-                    <span id="burgerMenu1"></span>
-                    <span id="burgerMenu2"></span>
-                    <span id="burgerMenu3"></span>
-                </div>
-                <div class="menu__block">
-                    <div class="menu__box closed" id="menu" onclick="closeMenu()">
-                        <div>
+                <nav class="menu__block">
+                    <div class="menu__btn" id="menuButton">
+                      <span id="burgerMenu1"></span>
+                      <span id="burgerMenu2"></span>
+                      <span id="burgerMenu3"></span>
+                    </div>
+                    <div class="menu__box closed" id="menu">
                             <ul class="header__list">
                                 <li><a href="index.html" class="header__link">Главная</a></li>
                                 <li><a href="index.html" class="header__link">Каталог</a></li>
@@ -42,7 +41,6 @@
                                 <li><a href="index.html" class="header__link">О нас</a></li>
                                 <li><a href="index.html" class="header__link">Контакты</a></li>
                             </ul>
-                        </div>
                     </div>
                     <div class="header__lang"><span>BYN &nbsp;</span>/&nbsp; RUB</div>
                     <div class="header__cart">
@@ -52,7 +50,7 @@
                           </svg>
                         </a>
                     </div>
-                </div>
+                </nav>
             </div>
         </div>
     </nav>

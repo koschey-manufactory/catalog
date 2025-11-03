@@ -1,31 +1,85 @@
 // menu
 
-let menu = document.getElementById("menu");
-let menuButton = document.getElementById("menuButton");
+// let menu = document.getElementById("menu");
+// let menuButton = document.getElementById("menuButton");
+// let burgerMenu1 = document.getElementById("burgerMenu1");
+// let burgerMenu2 = document.getElementById("burgerMenu2");
+// let burgerMenu3 = document.getElementById("burgerMenu3");
+// console.log(menu);
+
+// function burgerMenu() {
+//   console.log(menu);
+//   burgerMenu1.classList.toggle("checked1");
+//   burgerMenu2.classList.toggle("checked2");
+//   burgerMenu3.classList.toggle("checked3");
+//   menu.classList.toggle("opened");
+//   menuButton.classList.toggle("opened-menu");
+// }
+
+// function closeMenu() {
+//   burgerMenu1.classList.toggle("checked1");
+//   burgerMenu2.classList.toggle("checked2");
+//   burgerMenu3.classList.toggle("checked3");
+//   menu.classList.toggle("opened");
+//   menuButton.classList.toggle("opened-menu");
+// }
+
+
+// burger menu
+
+const burger = document.querySelector('.menu__burger');
+const menuList = document.querySelector('.menu__box');
+const menuLinks = document.querySelectorAll('.menu__link');
 let burgerMenu1 = document.getElementById("burgerMenu1");
 let burgerMenu2 = document.getElementById("burgerMenu2");
 let burgerMenu3 = document.getElementById("burgerMenu3");
-console.log(menu);
+const body = document.body;
 
-function burgerMenu() {
-  console.log(menu);
+burger.addEventListener('click', () => {
+  burger.classList.toggle('active');
+  menuList.classList.toggle('opened');
   burgerMenu1.classList.toggle("checked1");
   burgerMenu2.classList.toggle("checked2");
   burgerMenu3.classList.toggle("checked3");
-  menu.classList.toggle("opened");
   menuButton.classList.toggle("opened-menu");
+  // body.classList.toggle('no-scroll');
+});
+
+document.querySelectorAll('.menu__link').forEach(link => {
+  link.addEventListener('click', (e) => {
+    const href = link.getAttribute('href');
+
+    if (href && href.startsWith('#')) {
+      e.preventDefault();
+      const targetId = href.slice(1);
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }
+
+    burger.classList.remove('active');
+    menuList.classList.remove('active');
+    body.classList.remove('no-scroll');
+  });
+});
+
+function setMenu() {
+  if (window.innerWidth > 768 && burger.classList.contains('active')) {
+    burger.classList.remove('active');
+    menuList.classList.remove('active');
+    body.classList.remove('no-scroll');
+  }
 }
 
-function closeMenu() {
-  burgerMenu1.classList.toggle("checked1");
-  burgerMenu2.classList.toggle("checked2");
-  burgerMenu3.classList.toggle("checked3");
-  menu.classList.toggle("opened");
-  menuButton.classList.toggle("opened-menu");
-}
-
-
-
+window.addEventListener('resize', setMenu);
 
 // Инициализация EmailJS
 emailjs.init("3MmIo83jDJ5Rk45da"); // вставь свой публичный ключ из EmailJS
@@ -72,7 +126,7 @@ function renderCart() {
   if (!container) return; // если это не страница корзины
 
   if (cart.length === 0) {
-    container.innerHTML = "<p class='cart_empty'>Корзина пуста</p>";
+    container.innerHTML = "<p class='cart_empty'>Ваша корзина пуста. Выберите в каталоге интересующий товар и нажмите кнопку «В корзину».</p>";
     totalElem.textContent = "";
     checkoutBtn.classList.add("hidden");
     return;
@@ -87,7 +141,7 @@ function renderCart() {
       <span>Цвет</span>
       <span>Артикул</span>
       <span>Кол-во</span>
-      <span>Цена (BYN)</span>
+      <span>Цена</span>
       <span></span>
     </div>
   `;
@@ -113,7 +167,7 @@ function renderCart() {
     <span class="cart-color">${item.color}</span>
     <span class="cart-text">${item.text}</span>
     <input type="number" min="1" value="${item.quantity}" data-index="${i}" class="qty-input">
-    <span class="cart-price">${parseFloat(item.price).toFixed(0)}</span>
+    <span class="cart-price">${parseFloat(item.price).toFixed(0)} BYN</span>
     <button class="remove" data-index="${i}">✖</button>
   </div>
       `;
