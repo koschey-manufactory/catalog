@@ -1,76 +1,55 @@
 // menu
 
 let menu = document.getElementById("menu");
-let menuButton = document.getElementById("menuButton");
+let burger = document.querySelector('.menu__btn');
+const menuList = document.querySelector('.header__list');
+const menuLinks = document.querySelectorAll('.header__link')
 const body = document.body;
 
-
-
-menuButton.addEventListener('click', burgerMenu);
-menu.addEventListener('click', closeMenu);
-
-function burgerMenu() {
-  console.log(menu);
-  
+burger.addEventListener('click', () => {
   menu.classList.toggle("opened");
-  menuButton.classList.toggle("opened-menu");
+  burger.classList.toggle('active');
+  body.classList.toggle('no-scroll');
+});
+
+
+
+document.querySelectorAll('.header__link').forEach(link => {
+  link.addEventListener('click', (e) => {
+    const href = link.getAttribute('href');
+
+    if (href && href.startsWith('#')) {
+      e.preventDefault();
+      const targetId = href.slice(1);
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY;
+        const headerHeight = 65;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }
+
+    menu.classList.remove("opened");
+    burger.classList.remove('active');
+    body.classList.remove('no-scroll');
+  });
+});
+
+function setMenu() {
+  if (window.innerWidth > 768 && burger.classList.contains('active')) {
+    menu.classList.remove("opened");
+    burger.classList.remove('active');
+    body.classList.remove('no-scroll');
+  }
 }
 
-function closeMenu() {
- 
-  menu.classList.toggle("opened");
-  menuButton.classList.toggle("opened-menu");
-}
-
-
-// burger menu
-
-// const burger = document.querySelector('.menu__burger');
-// const menuList = document.querySelector('.menu__list');
-// const menuLinks = document.querySelectorAll('.menu__link')
-// 
-
-// burger.addEventListener('click', () => {
-//   burger.classList.toggle('active');
-//   menuList.classList.toggle('active');
-//   body.classList.toggle('no-scroll');
-// });
-
-// document.querySelectorAll('.menu__link').forEach(link => {
-//   link.addEventListener('click', (e) => {
-//     const href = link.getAttribute('href');
-
-//     if (href && href.startsWith('#')) {
-//       e.preventDefault();
-//       const targetId = href.slice(1);
-//       const targetElement = document.getElementById(targetId);
-
-//       if (targetElement) {
-//         const elementPosition = targetElement.getBoundingClientRect().top;
-//         const offsetPosition = elementPosition + window.scrollY;
-
-//         window.scrollTo({
-//           top: offsetPosition,
-//           behavior: 'smooth'
-//         });
-//       }
-//     }
-
-//     burger.classList.remove('active');
-//     menuList.classList.remove('active');
-//     body.classList.remove('no-scroll');
-//   });
-// });
-
-// function setMenu() {
-//   if (window.innerWidth > 768 && burger.classList.contains('active')) {
-//     burger.classList.remove('active');
-//     menuList.classList.remove('active');
-//     body.classList.remove('no-scroll');
-//   }
-// }
-
-// window.addEventListener('resize', setMenu);
+window.addEventListener('resize', setMenu);
 
 
 //colors

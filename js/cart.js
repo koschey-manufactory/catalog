@@ -1,51 +1,20 @@
 // menu
 
-// let menu = document.getElementById("menu");
-// let menuButton = document.getElementById("menuButton");
-// let burgerMenu1 = document.getElementById("burgerMenu1");
-// let burgerMenu2 = document.getElementById("burgerMenu2");
-// let burgerMenu3 = document.getElementById("burgerMenu3");
-// console.log(menu);
-
-// function burgerMenu() {
-//   console.log(menu);
-//   burgerMenu1.classList.toggle("checked1");
-//   burgerMenu2.classList.toggle("checked2");
-//   burgerMenu3.classList.toggle("checked3");
-//   menu.classList.toggle("opened");
-//   menuButton.classList.toggle("opened-menu");
-// }
-
-// function closeMenu() {
-//   burgerMenu1.classList.toggle("checked1");
-//   burgerMenu2.classList.toggle("checked2");
-//   burgerMenu3.classList.toggle("checked3");
-//   menu.classList.toggle("opened");
-//   menuButton.classList.toggle("opened-menu");
-// }
-
-
-// burger menu
-
-const burger = document.querySelector('.menu__burger');
-const menuList = document.querySelector('.menu__box');
-const menuLinks = document.querySelectorAll('.menu__link');
-let burgerMenu1 = document.getElementById("burgerMenu1");
-let burgerMenu2 = document.getElementById("burgerMenu2");
-let burgerMenu3 = document.getElementById("burgerMenu3");
+let menu = document.getElementById("menu");
+let burger = document.querySelector('.menu__btn');
+const menuList = document.querySelector('.header__list');
+const menuLinks = document.querySelectorAll('.header__link')
 const body = document.body;
 
 burger.addEventListener('click', () => {
+  menu.classList.toggle("opened");
   burger.classList.toggle('active');
-  menuList.classList.toggle('opened');
-  burgerMenu1.classList.toggle("checked1");
-  burgerMenu2.classList.toggle("checked2");
-  burgerMenu3.classList.toggle("checked3");
-  menuButton.classList.toggle("opened-menu");
-  // body.classList.toggle('no-scroll');
+  body.classList.toggle('no-scroll');
 });
 
-document.querySelectorAll('.menu__link').forEach(link => {
+
+
+document.querySelectorAll('.header__link').forEach(link => {
   link.addEventListener('click', (e) => {
     const href = link.getAttribute('href');
 
@@ -57,6 +26,7 @@ document.querySelectorAll('.menu__link').forEach(link => {
       if (targetElement) {
         const elementPosition = targetElement.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.scrollY;
+        const headerHeight = 65;
 
         window.scrollTo({
           top: offsetPosition,
@@ -65,21 +35,22 @@ document.querySelectorAll('.menu__link').forEach(link => {
       }
     }
 
+    menu.classList.remove("opened");
     burger.classList.remove('active');
-    menuList.classList.remove('active');
     body.classList.remove('no-scroll');
   });
 });
 
 function setMenu() {
   if (window.innerWidth > 768 && burger.classList.contains('active')) {
+    menu.classList.remove("opened");
     burger.classList.remove('active');
-    menuList.classList.remove('active');
     body.classList.remove('no-scroll');
   }
 }
 
 window.addEventListener('resize', setMenu);
+
 
 // Инициализация EmailJS
 emailjs.init("3MmIo83jDJ5Rk45da"); // вставь свой публичный ключ из EmailJS

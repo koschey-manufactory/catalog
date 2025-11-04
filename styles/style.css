@@ -96,6 +96,8 @@ section {
 .header {
     
     background-color: #000000;
+    
+    
 }
 
 .logo {
@@ -106,6 +108,7 @@ section {
     transition: 0.3s ease;
     cursor: pointer;
     display: flex;
+    z-index: 1100;
 }
 
 .header {
@@ -126,13 +129,12 @@ section {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 15px;
+    gap: 40px;
     list-style-type: none;
     font-family: 'Inter', sans-serif;
 }
 
 .header__list li a {
-    margin-right: 30px;
     font-size: 20px;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
@@ -153,71 +155,18 @@ section {
     font-weight: 700;
     color: #ffffff;
     cursor: pointer;
+    z-index: 1100;
 }
 
 .header__lang span {
     color: #78866b;
 }
 
+.header__cart {
+        z-index: 1100;
+    }
+ 
 
-/* hero */
-
-.hero {
-    height: calc(100vh - 90px);
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-image: url(../images/background4.png);
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.hero__info h1 {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    height: 120px;
-    margin-bottom: 10px;
-    font-size: 58px;
-    font-family: 'Merriweather', serif;
-    font-weight: 700;
-    color: #ffffff;
-}
-
-.hero__text {
-    width: 770px;
-    margin-bottom: 25px;
-    font-size: 20px;
-    line-height: 34px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    color: #ffffff;
-}
-
-.hero__button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 280px;
-    height: 55px;
-    font-size: 20px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    background-color: #78866b;
-    border: #0000000a 2px solid;
-    cursor: pointer;
-}
-
-.hero__button a {
-    color: #000000;
-    text-decoration: none;
-}
-
-.hero__button a:hover {
-    color: #ffffff;
-}
 
 
 
@@ -227,7 +176,7 @@ section {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 15px;
+    gap: 40px;
     align-items: center;
     transition: right 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;;
 }
@@ -273,6 +222,67 @@ section {
 
 .menu__btn:hover {
     color: #bdae82;
+}
+
+
+
+/* hero */
+
+.hero {
+    height: calc(100vh - 90px);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../images/background4.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero__info h1 {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 30px;
+    font-size: 58px;
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.hero__text {
+    width: 770px;
+    margin-bottom: 25px;
+    font-size: 20px;
+    line-height: 34px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+.hero__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    height: 55px;
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    background-color: #78866b;
+    border: #0000000a 2px solid;
+    cursor: pointer;
+}
+
+.hero__button a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.hero__button a:hover {
+    color: #ffffff;
 }
 
 
@@ -1127,16 +1137,19 @@ footer .container {
         width: 352px;
         height: 352px;
         margin-bottom: 20px;
+        
     }
 
-    .hero__info {
-        height: 100%;
-        padding: 160px 30px 230px;
-    }
+   
 
     .hero {
         height: 100%;
+        
     }
+    
+    .hero.section {
+        padding: 180px 30px 220px;
+    };
 
     .slider-button img {
         width: 18px; /* Ширина стрелки */
@@ -1151,7 +1164,7 @@ footer .container {
 
 
 @media screen and (max-width: 1439px) {
-    .hero__info {
+    .hero {
         background-position: 60%;
     }
 
@@ -1214,11 +1227,9 @@ footer .container {
         margin-bottom: 60px;
     }
 
-    .hero__info h1 {
-        margin-bottom: 40px;
-    }
 
-    .hero__info {
+
+    .hero {
         background-position: 70%;
     }
 
@@ -1395,11 +1406,11 @@ footer .container {
     }
 
     .menu__block {
-    gap: 15px;
+    gap: 35px;
 }
 
     .header__list {
-    gap: 10px;
+    gap: 35px;
 } 
 
 
@@ -1486,7 +1497,7 @@ footer .container {
     }
 
     .hero__text {
-        line-height: 36px;
+        line-height: 34px;
     }
 
     footer {
@@ -1538,11 +1549,11 @@ footer .container {
   
   
         .menu__block {
-    gap: 10px;
+    gap: 30px;
 }
 
     .header__list {
-    gap: 5px;
+    gap: 30px;
 } 
 
 
@@ -1592,7 +1603,7 @@ footer .container {
         width: 100%;
         height: 100vh;
         margin: 0 auto;
-        padding: 60px 0;
+        padding: 65px 0 0;
         list-style: none;
         background-color: #000000;
         box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
@@ -1606,26 +1617,44 @@ footer .container {
         transition: right 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
     }
 
+
+    .header__list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+    }
+
+ .header__list li a {
+    text-align: center;
+    width: 100%;
+    font-size: 30px;
+    line-height: normal
+ }
+
+
+
     .header__lang {
         font-size: 20px;
     
     }
 
-    .menu__burger {
+    .menu__btn {
         position: relative;
     }
 
-     .menu__burger {
+     .menu__btn {
         display: block;
     } 
 
-    .menu__burger.active span:nth-child(1) {
+    .menu__btn.active span:nth-child(1) {
     top: 50%;
-    width: 20px;
+    width: 22px;
     transform: rotate(45deg);
   }
 
-  .menu__burger.active span:nth-child(2) {
+  .menu__btn.active span:nth-child(2) {
     top: 50%;
     transform: rotate(-45deg);
   }
@@ -1652,11 +1681,7 @@ footer .container {
         margin-bottom: 0;
     }
 
-    .header__list li a {
-        margin-right: 0;
-        font-size: 35px;
-        line-height: 72.55px;
-    }
+  
 
     .header__list li  {
         width: 100%;
@@ -1724,7 +1749,7 @@ footer .container {
     }
 
     .hero__text {
-        width: 100%;
+        width: 95%;
     }
 
     .section-title, .catalog-section-title {
@@ -1806,9 +1831,9 @@ footer .container {
 
    
     .hero__info h1 {
-        margin-top: 40px;
-        margin-bottom: 40px;
-        font-size: 50px;
+        margin-top: 35px;
+        margin-bottom: 30px;
+        font-size: 48px;
         line-height: 56px;
     }
 
@@ -1819,13 +1844,8 @@ footer .container {
         line-height: 32px;
     }
 
-    .hero__info {
-        margin-left: 0;
-        padding: 90px 0 152px;
-        
-    }
-
    
+    
     
     .slider-button img {
         width: 20px; 
@@ -1844,10 +1864,6 @@ footer .container {
 
 @media screen and (max-width: 768px) {
 
-    .hero__info {
-        margin-left: 0;
-        padding: 130px 0 152px; 
-    }
     
     .section-title-text {
         font-size: 30px;
@@ -2012,6 +2028,10 @@ footer .container {
     .modal-slider {
     width: 90%;
     }
+
+    .hero__info h1 {
+        font-size: 46px;
+    }
 }
 
 
@@ -2021,16 +2041,15 @@ footer .container {
     }
 
     .hero__info h1 {
-        height: 58px;
         margin-top: 40px;
-        margin-bottom: 60px;
+        margin-bottom: 30px;
         font-size: 42px;
         line-height: 50px;
     }
 
     .hero__text {
         width: 100%;
-        margin-bottom: 40px;
+        margin-bottom: 35px;
         font-size: 18px;
         line-height: 28px;
     }
@@ -2098,35 +2117,24 @@ footer .container {
         width: 100%;
         }
 
-  
+   .hero.section {
+        padding: 160px 20px 160px;
+    };
 }
 
 
 @media screen and (max-width: 598px) { 
     .hero__info h1 {
-        margin-bottom: 55px;
-        font-size: 40px;  
+        font-size: 38px;  
     }
 
-    .hero__text {
-        margin-bottom: 35px;
-    }
 
     .images {
         width: 360px;
         height: 360px; 
     }
 
-    
 
-
-
- 
-  
-
-    .menu__box {
-        padding: 100px 0 0 100px;
-    }
 
     .header .container {
         background-position: 75%;
@@ -2153,13 +2161,16 @@ footer .container {
   height: 25px;
 
 }
+
+.hero.section {
+        padding: 160px 10px 160px;
+    };
 }
 
 
 @media screen and (max-width: 550px) { 
 
     .hero__info h1 {
-        margin-bottom: 55px;
         font-size: 36px;
     }
 
@@ -2276,12 +2287,15 @@ footer .container {
     gap: 4px;
 }
 
+.hero.section {
+        padding: 130px 0 150px;
+    };
+
 }
 
 
 @media screen and (max-width: 495px) { 
     .hero__info h1 {
-        margin-bottom: 55px;
         font-size: 34px;
     }
 
@@ -2302,7 +2316,10 @@ footer .container {
     }
 
     
-
+.container {
+        padding: 0 20px;
+    }
+   
 
 
 
@@ -2314,8 +2331,6 @@ footer .container {
 
 @media screen and (max-width: 470px) { 
       .hero__info h1 {
-        height: auto;
-        margin-bottom: 35px;
         font-size: 36px;
         line-height: 48px;
     }
@@ -2347,9 +2362,6 @@ footer .container {
         line-height: 50.55px;
     }
 
-    .menu__box {
-        padding: 100px 0 0 70px;
-    }
 
     .images {
         width: 240px;
@@ -2381,10 +2393,6 @@ footer .container {
         margin-right: 0;
         font-size: 26px;
         line-height: 50.55px;
-    }
-
-    .menu__box {
-        padding: 100px 0 0 70px;
     }
 
     .hero__text {
@@ -2431,9 +2439,8 @@ footer .container {
     }
 
     .hero__info h1 {
-        font-size: 30px;
+        font-size: 28px;
         line-height: 42px;
-        margin-bottom: 35px;
     }
 
     .section-title-heading {
@@ -2453,10 +2460,7 @@ footer .container {
         font-size: 18px;
     }
 
-    .hero__info {
-        margin-left: 0;
-        padding: 110px 0 142px;
-    }
+   
 
     .skills__item h3 {
         margin-bottom: 20px;
@@ -2521,7 +2525,6 @@ footer .container {
     
     .container {
         max-width: 100%; 
-        padding:  0 30px;
     }
 
     .modal-color-options span {
@@ -2542,9 +2545,7 @@ footer .container {
 
 
 @media screen and (max-width: 380px) { 
-    .menu__box {
-        padding: 90px 0 0 0;
-    }
+  
 
     .header__lang {
         font-size: 16px;
@@ -2553,7 +2554,7 @@ footer .container {
    
 
     .hero__info h1 {
-        margin-bottom: 35px;
+        margin-bottom: 25px;
         font-size: 28px;
         line-height: 38px;
     }
@@ -2565,15 +2566,12 @@ footer .container {
     }
 
     .hero__text {
-        margin-bottom: 35px;
+        margin-bottom: 30px;
         font-size: 16px;
         line-height: 24px;
     }
 
-    .hero__info {
-        margin-left: 0;
-        padding: 100px 0 132px;
-    }
+   
 
     .images {
         width: 200px;
@@ -2690,6 +2688,8 @@ footer .container {
     margin: 0;
     padding: 0;
 }
+
+
 
 .cart__main {
     flex: 1; 

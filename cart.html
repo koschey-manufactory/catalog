@@ -21,25 +21,19 @@
 </script>
 </head>
 <body class="cart__body">
-<header class="header header__main">
-    <nav class="header__menu">
+<header class="header">
         <div class="container">
             <div class="logo">
             </div>
-            <div class="menu__burger">
-                <nav class="menu__block">
-                    <div class="menu__btn" id="menuButton">
-                      <span id="burgerMenu1"></span>
-                      <span id="burgerMenu2"></span>
-                      <span id="burgerMenu3"></span>
-                    </div>
-                    <div class="menu__box closed" id="menu">
+            <nav class="menu__burger">
+                <div class="menu__block">
+                    <div class="menu__box" id="menu">
                             <ul class="header__list">
-                                <li><a href="index.html" class="header__link">Главная</a></li>
-                                <li><a href="index.html" class="header__link">Каталог</a></li>
-                                <li><a href="#" class="header__link">Новости</a></li>
-                                <li><a href="index.html" class="header__link">О нас</a></li>
-                                <li><a href="index.html" class="header__link">Контакты</a></li>
+                                <li><a href="index.html#main" class="header__link">Главная</a></li>
+                                <li><a href="index.html#catalog1" class="header__link">Каталог</a></li>
+                                <li><a href="index.html#price" class="header__link">Новости</a></li>
+                                <li><a href="index.html#about" class="header__link">О нас</a></li>
+                                <li><a href="index.html#contacts" class="header__link">Контакты</a></li>
                             </ul>
                     </div>
                     <div class="header__lang"><span>BYN &nbsp;</span>/&nbsp; RUB</div>
@@ -50,11 +44,14 @@
                           </svg>
                         </a>
                     </div>
-                </nav>
-            </div>
+                    <div class="menu__btn" id="menuButton">
+                      <span></span>
+                     <span></span>
+                    </div>
+                </div>
+            </nav>
         </div>
-    </nav>
-</header>
+    </header>
 <main class="cart__main">
   <h1 class="section-title-heading cart-title">Корзина</h1>
 
